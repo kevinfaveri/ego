@@ -1,0 +1,18 @@
+{
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "eslint.autoFixOnSave": true,
+  "prettier.disableLanguages": [
+    "javascript",
+    "javascriptreact"
+  ],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "commentAnchors.workspace.excludeFiles": "**/{node_modules,.git,.idea,target,out,build,vendor,.next}/**/*"
+}
