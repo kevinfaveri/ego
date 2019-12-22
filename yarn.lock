@@ -5357,6 +5357,14 @@ gatsby-plugin-styled-components@^3.1.16:
   dependencies:
     "@babel/runtime" "^7.7.6"
 
+gatsby-plugin-web-font-loader@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/gatsby-plugin-web-font-loader/-/gatsby-plugin-web-font-loader-1.0.4.tgz#c50bdb0c1980110b3fd213a5be70feb2459514c3"
+  integrity sha512-3c39bX9CcsYJQFhhmTyjuMJSqpld2rX+HsTOxP9k1PKFR4Rvo3lpzBW4d1tVpmUesR8BNL6u9eHT7/XksS1iog==
+  dependencies:
+    babel-runtime "^6.26.0"
+    webfontloader "^1.6.28"
+
 gatsby-react-router-scroll@^2.1.17:
   version "2.1.17"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.17.tgz#1a8cbb8c5ca7dae40d1a650766d21a92a2a8f565"
@@ -11167,6 +11175,11 @@ styled-components@^4.4.1:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
+styled-tools@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.npmjs.org/styled-tools/-/styled-tools-1.7.1.tgz#1c9a586f49c8aa85d18aa5ca26ac01250e7fc6c5"
+  integrity sha512-F0ANrxYgc6rMO5npJmOWu8+jvHDlOuu31JGeWIHBVuPJ2mUCpLLAN5dN+4MC+OBIdJAJ/BpsfFuxKnOWq7YAJQ==
+
 stylehacks@^4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/stylehacks/-/stylehacks-4.0.3.tgz#6718fcaf4d1e07d8a1318690881e8d96726a71d5"
@@ -11900,6 +11913,11 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
   dependencies:
     minimalistic-assert "^1.0.0"
+
+webfontloader@^1.6.28:
+  version "1.6.28"
+  resolved "https://registry.npmjs.org/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
+  integrity sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
 
 webpack-dev-middleware@^3.7.2:
   version "3.7.2"

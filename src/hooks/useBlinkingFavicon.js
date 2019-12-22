@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 export function useBlinkingFavicon() {
@@ -33,12 +33,22 @@ export function useBlinkingFavicon() {
   ).node.fluid.src;
 
   const [faviconPath, setFaviconPath] = useState(favicon);
-  const faviconInterval = setInterval(
-    () => setFaviconPath(faviconPath === favicon ? blinkingFavicon : favicon),
-    300
+
+  const setNewTimeout = useCallback(
+    () =>
+      setTimeout(
+        () =>
+          setFaviconPath(faviconPath === favicon ? blinkingFavicon : favicon),
+        300
+      ),
+    [faviconPath]
   );
+
+  let faviconTimeout = setNewTimeout();
   useEffect(() => {
+    clearTimeout(faviconTimeout);
+    faviconTimeout = setNewTimeout();
     document.querySelector('[rel="icon"]').href = faviconPath;
-    return () => clearInterval(faviconInterval);
+    return () => clearTimeout(faviconTimeout);
   }, [faviconPath]);
 }

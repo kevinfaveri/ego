@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Ego`,
-    description: `Ego is my personal site which includes portfolium and blog.`,
+    description: `Ego is my personal site which includes portfolio and blog.`,
     author: `@kevinfaguiar`,
   },
   plugins: [
@@ -37,6 +37,14 @@ module.exports = {
       resolve: 'gatsby-plugin-extract-schema',
       options: {
         dest: `${__dirname}/src/schema.graphql`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Lato'],
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
