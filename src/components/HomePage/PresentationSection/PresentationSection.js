@@ -16,7 +16,7 @@ const rootQuery = graphql`
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/(markdown-onepage)/" }
-        frontmatter: { title: { eq: "Presentation" } }
+        frontmatter: { id: { eq: "d2018967-2c23-451f-b803-545e16e60e61" } }
       }
     ) {
       totalCount
@@ -24,6 +24,7 @@ const rootQuery = graphql`
         node {
           id
           frontmatter {
+            id
             title
             date
             typingPartOne
@@ -50,6 +51,7 @@ function PresentationSection() {
   const presentationData = getSingleMarkdownNode(data);
   const myselfImage = getSingleImageFixed(data);
   const {
+    id,
     title,
     typingPartOne,
     contentPartOne,
@@ -64,7 +66,7 @@ function PresentationSection() {
   }, 700);
 
   return (
-    <Hero bgColor="primary" id={title.toString().toLowerCase()}>
+    <Hero bgColor="primary" id={id}>
       <StyledRow>
         <StyledColumn>
           <AnimatedTyping steps={[500, typingPartOne]} />
