@@ -1,36 +1,36 @@
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { getImageByOriginalFileName } from '../utils/graphql-utils';
 
-export function useBlinkingFavicon() {
-  const {
-    allImageSharp: { edges: favicons },
-  } = useStaticQuery(graphql`
-    query {
-      allImageSharp(
-        filter: {
-          fluid: {
-            originalName: { regex: "/(terminal.png|terminal-blinking.png)/" }
-          }
+const faviconsQuery = graphql`
+  query {
+    allImageSharp(
+      filter: {
+        fluid: {
+          originalName: { regex: "/(terminal.png|terminal-blinking.png)/" }
         }
-      ) {
-        edges {
-          node {
-            id
-            fluid {
-              src
-              originalName
-            }
+      }
+    ) {
+      edges {
+        node {
+          id
+          fluid {
+            src
+            originalName
           }
         }
       }
     }
-  `);
-  const favicon = favicons.find(
-    x => x.node.fluid.originalName === 'terminal.png'
-  ).node.fluid.src;
-  const blinkingFavicon = favicons.find(
-    x => x.node.fluid.originalName === 'terminal-blinking.png'
-  ).node.fluid.src;
+  }
+`;
+
+export function useBlinkingFavicon() {
+  const faviconsData = useStaticQuery(faviconsQuery);
+  const favicon = getImageByOriginalFileName(faviconsData, 'terminal.png');
+  const blinkingFavicon = getImageByOriginalFileName(
+    faviconsData,
+    'terminal-blinking.png'
+  );
 
   const [faviconPath, setFaviconPath] = useState(favicon);
 

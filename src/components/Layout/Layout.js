@@ -7,7 +7,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
 
 import { ThemeProvider } from 'styled-components';
 import { useBlinkingFavicon } from '../../hooks/useBlinkingFavicon';
@@ -16,8 +15,7 @@ import Header from '../Header';
 
 const theme = {
   colors: {
-    primary: '#fcb813',
-    secondary: '#23416E',
+    primary: 'teal',
     terciary: '#d9d9d9',
     textPrimary: '#d9d9d9',
     textSecondary: '#343531',

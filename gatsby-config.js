@@ -9,8 +9,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'markdown-onepage',
+        path: `${__dirname}/src/markdown-onepage`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'markdown-pages',
+        path: `${__dirname}/src/markdown-pages`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -43,8 +57,18 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Lato'],
+          families: ['Lato', 'Poppins'],
         },
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        commonmark: true,
+        footnotes: true,
+        pedantic: true,
+        gfm: true,
+        plugins: [],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

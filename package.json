@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@camwiegert/typical": "^0.1.1",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.18.8",
     "gatsby-image": "^2.2.34",
@@ -15,13 +16,16 @@
     "gatsby-plugin-styled-components": "^3.1.16",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.40",
+    "gatsby-transformer-remark": "^2.6.45",
     "gatsby-transformer-sharp": "^2.3.7",
+    "polished": "^3.4.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "styled-components": "^4.4.1",
-    "styled-tools": "^1.7.1"
+    "styled-tools": "^1.7.1",
+    "twemoji": "^12.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",

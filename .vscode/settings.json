@@ -14,5 +14,8 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
-  "commentAnchors.workspace.excludeFiles": "**/{node_modules,.git,.idea,target,out,build,vendor,.next}/**/*"
+  "commentAnchors.workspace.excludeFiles": "**/{node_modules,.git,.idea,target,out,build,vendor,.next}/**/*",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
