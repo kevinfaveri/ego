@@ -16,7 +16,10 @@ const IndexPage = () => (
     <div>CONTACT ME AND SOCIAL NETWORKS</div>
     <div>FOOTER AND COPYRIGHT</div>
     <div>SOCIAL NETWORKS FOR HOME SECTION</div>
-    <div>HEADER WITH SMOOTH SCROLLING CONTAINING ALL SECTIONS</div>
+    <div>
+      HEADER WITH SMOOTH SCROLLING CONTAINING ALL SECTIONS / BLOG OPTION WITH
+      SOON LOGO
+    </div>
     <div>DARK/LIGHT THEME OPTION</div>
     <div>i18n PT/EN OPTION</div>
     <div>REFAC FOR MOBILE (less than 1280 width)</div>
