@@ -10,6 +10,7 @@ import {
 } from '../../../utils/graphql-utils';
 import LazyImage from '../../LazyImage';
 import { StyledColumn, StyledRow } from '../../Layout/global-styles';
+import { useTimeout } from '../../../hooks/useInterval';
 
 const rootQuery = graphql`
   query {
@@ -46,24 +47,21 @@ const rootQuery = graphql`
   }
 `;
 
-function PresentationSection() {
+function HomeSection() {
   const data = useStaticQuery(rootQuery);
-  const presentationData = getSingleMarkdownNode(data);
+  const { frontmatter } = getSingleMarkdownNode(data);
   const myselfImage = getSingleImageFixed(data);
   const {
     id,
-    title,
     typingPartOne,
     contentPartOne,
     contentPartTwo,
     contentPartThree,
-  } = presentationData;
+  } = frontmatter;
 
   const [dividerWidth, setDividerWidth] = useState(0);
 
-  setTimeout(() => {
-    setDividerWidth('100%');
-  }, 700);
+  useTimeout(() => setDividerWidth('100%'), 700);
 
   return (
     <Hero bgColor="primary" id={id}>
@@ -98,4 +96,4 @@ function PresentationSection() {
   );
 }
 
-export default PresentationSection;
+export default HomeSection;

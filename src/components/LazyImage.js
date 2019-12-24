@@ -11,13 +11,15 @@ const LazyImage = ({ imageFluid, imageFixed, style, imgStyle }) => {
 };
 
 LazyImage.defaultProps = {
+  imageFluid: undefined,
+  imageFixed: undefined,
   style: {},
   imgStyle: {},
 };
 
 LazyImage.propTypes = {
-  imageFluid: PropTypes.object.isRequired,
-  imageFixed: PropTypes.object.isRequired,
+  imageFluid: PropTypes.object,
+  imageFixed: PropTypes.object,
   style: PropTypes.object,
   imgStyle: PropTypes.object,
 };

@@ -1,9 +1,9 @@
 export function getSingleMarkdownNode(data) {
-  return data.allMarkdownRemark.edges[0].node.frontmatter;
+  return data.allMarkdownRemark.edges[0].node;
 }
 
 export function getSingleImageNode(data) {
-  return data.allImageSharp.edges[0].node.fluid;
+  return data.allImageSharp.edges[0].node;
 }
 
 export function getSingleImageFluid(data) {

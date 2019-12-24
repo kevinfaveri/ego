@@ -15,7 +15,7 @@ export const StyledMessage = styled.div`
 `;
 
 export const StyledDivider = styled.div`
-  transition: ease-in-out 2s;
+  transition: ease-in-out 1s;
   width: ${prop('dividerWidth', 0)};
   border-bottom: 5px solid ${theme('colors.primary')};
 `;

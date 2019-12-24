@@ -1,13 +1,16 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
-import PresentationSection from '../components/HomePage/PresentationSection';
+import HomeSection from '../components/LandingPage/HomeSection';
+import AboutMeSection from '../components/LandingPage/AboutMeSection';
+import TechstackSection from '../components/LandingPage/TechstackSection';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <PresentationSection />
-    <div>ABOUT ME SECTION</div>
+    <HomeSection />
+    <AboutMeSection />
+    <TechstackSection />
     <div>WORK SECTION</div>
     <div>OPEN SOURCE PORTFOLIO</div>
     <div>CONTACT ME</div>
