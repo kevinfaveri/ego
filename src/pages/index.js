@@ -13,7 +13,12 @@ const IndexPage = () => (
     <TechstackSection />
     <div>WORK SECTION</div>
     <div>OPEN SOURCE PORTFOLIO</div>
-    <div>CONTACT ME</div>
+    <div>CONTACT ME AND SOCIAL NETWORKS</div>
+    <div>FOOTER AND COPYRIGHT</div>
+    <div>SOCIAL NETWORKS FOR HOME SECTION</div>
+    <div>HEADER WITH SMOOTH SCROLLING CONTAINING ALL SECTIONS</div>
+    <div>DARK/LIGHT THEME OPTION</div>
+    <div>i18n PT/EN OPTION</div>
   </Layout>
 );
 
