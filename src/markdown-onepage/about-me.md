@@ -7,4 +7,4 @@ I'm a software engineer with 5+ years of experience and a bachelor's degree in C
 
 I'm that kind of person that gets bored easily, so I'm constantly studying new approaches, technologies, and paradigms to turn the tables... The dynamicity of the profession is what makes me feel enthusiastic!
 
-Oh, of course, Ghost is my son, <a  class="hover-link" target="_blank" href="https://www.instagram.com/stories/highlights/18064206010048203/" title="Ghost Instagram Highlight">a beautiful Akita</a>.
+Oh, of course... Ghost is my son, <a  class="hover-link" target="_blank" href="https://www.instagram.com/stories/highlights/18064206010048203/" title="Ghost Instagram Highlight">a beautiful Akita</a>.
