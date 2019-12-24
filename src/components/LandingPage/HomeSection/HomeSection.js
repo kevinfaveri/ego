@@ -87,7 +87,7 @@ function HomeSection() {
         </StyledColumn>
         <StyledColumn>
           <LazyImage
-            imageFixed={kevinPhoto.childImageSharp.fixed}
+            imageFixed={getSingleImageFixed(kevinPhoto)}
             style={{ borderRadius: '150px' }}
           />
         </StyledColumn>

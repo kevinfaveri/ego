@@ -7,11 +7,11 @@ export function getSingleImageNode(data) {
 }
 
 export function getSingleImageFluid(data) {
-  return data.placeholderImage.childImageSharp.fluid;
+  return data.childImageSharp.fluid;
 }
 
 export function getSingleImageFixed(data) {
-  return data.placeholderImage.childImageSharp.fixed;
+  return data.childImageSharp.fixed;
 }
 
 export function getImageByOriginalFileName(imageList, filename) {
