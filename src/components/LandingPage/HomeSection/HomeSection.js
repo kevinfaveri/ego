@@ -32,15 +32,15 @@ const rootQuery = graphql`
             contentPartOne
             contentPartTwo
             contentPartThree
+            kevinPhoto {
+              childImageSharp {
+                fixed(width: 300, quality: 100, cropFocus: CENTER) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           excerpt
-        }
-      }
-    }
-    placeholderImage: file(relativePath: { eq: "itsmekevin.png" }) {
-      childImageSharp {
-        fixed(width: 300, quality: 100, cropFocus: CENTER) {
-          ...GatsbyImageSharpFixed
         }
       }
     }
@@ -50,13 +50,13 @@ const rootQuery = graphql`
 function HomeSection() {
   const data = useStaticQuery(rootQuery);
   const { frontmatter } = getSingleMarkdownNode(data);
-  const myselfImage = getSingleImageFixed(data);
   const {
     id,
     typingPartOne,
     contentPartOne,
     contentPartTwo,
     contentPartThree,
+    kevinPhoto,
   } = frontmatter;
 
   const [dividerWidth, setDividerWidth] = useState(0);
@@ -87,7 +87,7 @@ function HomeSection() {
         </StyledColumn>
         <StyledColumn>
           <LazyImage
-            imageFixed={myselfImage}
+            imageFixed={kevinPhoto.childImageSharp.fixed}
             style={{ borderRadius: '150px' }}
           />
         </StyledColumn>

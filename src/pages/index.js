@@ -19,6 +19,7 @@ const IndexPage = () => (
     <div>HEADER WITH SMOOTH SCROLLING CONTAINING ALL SECTIONS</div>
     <div>DARK/LIGHT THEME OPTION</div>
     <div>i18n PT/EN OPTION</div>
+    <div>REFAC FOR MOBILE (less than 1280 width)</div>
   </Layout>
 );
 

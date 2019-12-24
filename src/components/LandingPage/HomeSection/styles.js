@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme, prop } from 'styled-tools';
 
 export const StyledMessage = styled.div`
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-top: 1.5rem;
   color: ${theme('colors.textPrimary')};
   text-align: center;

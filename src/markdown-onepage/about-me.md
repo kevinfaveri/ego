@@ -3,7 +3,7 @@ id: "871d6ed8-7dc0-4ec0-aeed-344eb4a77ab9"
 title: "About Me"
 date: "2019-12-23"
 ---
-I'm a software engineer with 5+ years of experience and a bachelor's degree in Computer Science. I'm also an open source colaborator, either through my own or other people's projects.
+I'm a software engineer with 5+ years of experience and a bachelor's degree in Computer Science. I'm also an open-source collaborator, either through my own or other people's projects.
 
 I'm that kind of person that gets bored easily, so I'm constantly studying new approaches, technologies, and paradigms to turn the tables... The dynamicity of the profession is what makes me feel enthusiastic!
 
