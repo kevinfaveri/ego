@@ -11,6 +11,7 @@ import {
 import LazyImage from '../../LazyImage';
 import { StyledColumn, StyledRow } from '../../Layout/global-styles';
 import { useTimeout } from '../../../hooks/useInterval';
+import SocialLinks from '../../SocialLinks';
 
 const rootQuery = graphql`
   query {
@@ -86,10 +87,15 @@ function HomeSection() {
           />
         </StyledColumn>
         <StyledColumn>
-          <LazyImage
-            imageFixed={getSingleImageFixed(kevinPhoto)}
-            style={{ borderRadius: '150px' }}
-          />
+          <StyledRow>
+            <LazyImage
+              imageFixed={getSingleImageFixed(kevinPhoto)}
+              style={{ borderRadius: '150px' }}
+            />
+          </StyledRow>
+          <StyledRow>
+            <SocialLinks />
+          </StyledRow>
         </StyledColumn>
       </StyledRow>
     </Hero>
