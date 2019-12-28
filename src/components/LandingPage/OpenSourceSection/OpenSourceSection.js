@@ -68,6 +68,8 @@ function OpenSourceSection() {
                 <a
                   href={projectUrl}
                   title={projectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover-img-link"
                 >
                   <LazyImage

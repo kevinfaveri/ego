@@ -56,7 +56,12 @@ function WorkSection() {
         return (
           <StyledRow style={{ margin: '30px 0' }}>
             <StyledColumn>
-              <a href={enterpriseUrl} title={enterpriseUrl}>
+              <a
+                href={enterpriseUrl}
+                title={enterpriseUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <LazyImage
                   imageFixed={getSingleImageFixed(enterpriseLogo)}
                   style={{ borderRadius: '15px', margin: 'auto' }}
