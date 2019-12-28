@@ -12,6 +12,7 @@ import { ThemeProvider } from 'styled-components';
 import { useBlinkingFavicon } from '../../hooks/useBlinkingFavicon';
 import GlobalStyles from './global-styles';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const theme = {
   colors: {
@@ -32,10 +33,7 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <Header />
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer />
     </ThemeProvider>
   );
 };

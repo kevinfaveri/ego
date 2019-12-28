@@ -6,12 +6,6 @@ export const StyledMessage = styled.div`
   margin-top: 1.5rem;
   color: ${theme('colors.textPrimary')};
   text-align: center;
-
-  > img.emoji {
-    height: 1em;
-    width: 1em;
-    vertical-align: -0.1em;
-  }
 `;
 
 export const StyledDivider = styled.div`

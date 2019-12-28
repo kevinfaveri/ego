@@ -42,6 +42,12 @@ export default createGlobalStyle`
       opacity: 0.6;
     }
   }
+
+  img.emoji {
+    height: 1em;
+    width: 1em;
+    vertical-align: -0.1em;
+  }
 `;
 
 export const StyledRow = styled.div`
