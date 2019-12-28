@@ -10,5 +10,5 @@ export const StyledHeader = styled.h1`
 export const StyledContent = styled.div`
   font-size: 1.3rem;
   color: ${theme('colors.textPrimary')};
-  text-align: center;
+  text-align: justify;
 `;

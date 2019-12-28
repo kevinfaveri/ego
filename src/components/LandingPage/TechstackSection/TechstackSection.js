@@ -35,7 +35,7 @@ function TechstackSection() {
   const { id, title } = frontmatter;
 
   return (
-    <Hero bgColor="primary" id={id}>
+    <Hero bgColor="primary" id="techstack">
       <StyledRow>
         <StyledColumn>
           <StyledContent dangerouslySetInnerHTML={{ __html: html }} />

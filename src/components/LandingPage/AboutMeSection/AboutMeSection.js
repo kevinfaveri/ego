@@ -35,7 +35,7 @@ function AboutMeSection() {
   const { id, title } = frontmatter;
 
   return (
-    <Hero bgColor="secondary" id={id}>
+    <Hero bgColor="secondary" id="about-me">
       <StyledRow>
         <StyledColumn>
           <StyledHeader>{title}</StyledHeader>

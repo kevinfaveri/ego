@@ -4,6 +4,7 @@ import SEO from '../components/seo';
 import HomeSection from '../components/LandingPage/HomeSection';
 import AboutMeSection from '../components/LandingPage/AboutMeSection';
 import TechstackSection from '../components/LandingPage/TechstackSection';
+import WorkSection from '../components/LandingPage/WorkSection';
 
 /**
 <div>WORK SECTION</div>
@@ -31,6 +32,7 @@ const IndexPage = () => (
     <HomeSection />
     <AboutMeSection />
     <TechstackSection />
+    <WorkSection />
   </Layout>
 );
 
