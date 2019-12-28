@@ -18,7 +18,7 @@ const rootQuery = graphql`
         fileAbsolutePath: { regex: "/(markdown-onepage)/" }
         frontmatter: { type: { eq: "open-source" } }
       }
-      sort: { order: DESC, fields: [frontmatter___id] }
+      sort: { order: ASC, fields: [frontmatter___id] }
     ) {
       totalCount
       edges {

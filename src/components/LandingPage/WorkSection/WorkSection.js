@@ -59,6 +59,7 @@ function WorkSection() {
               <a
                 href={enterpriseUrl}
                 title={enterpriseUrl}
+                className="hover-img-link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
