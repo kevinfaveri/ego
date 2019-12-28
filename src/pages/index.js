@@ -5,10 +5,9 @@ import HomeSection from '../components/LandingPage/HomeSection';
 import AboutMeSection from '../components/LandingPage/AboutMeSection';
 import TechstackSection from '../components/LandingPage/TechstackSection';
 import WorkSection from '../components/LandingPage/WorkSection';
+import OpenSourceSection from '../components/LandingPage/OpenSourceSection/OpenSourceSection';
 
 /**
-<div>WORK SECTION</div>
-<div>OPEN SOURCE PORTFOLIO</div>
 <div>CONTACT ME AND SOCIAL NETWORKS</div>
 <div>
   FOOTER AND COPYRIGHT AND MADE WITH LOVE BY KEVIN WITH GATSBY STYLED
@@ -33,6 +32,7 @@ const IndexPage = () => (
     <AboutMeSection />
     <TechstackSection />
     <WorkSection />
+    <OpenSourceSection />
   </Layout>
 );
 

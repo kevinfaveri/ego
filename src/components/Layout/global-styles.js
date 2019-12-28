@@ -34,12 +34,19 @@ export default createGlobalStyle`
       )};
     }
   }
+
+  .hover-img-link {
+    opacity: 1;
+
+    :hover {
+      opacity: 0.6;
+    }
+  }
 `;
 
 export const StyledRow = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
   padding-left: 10%;
   padding-right: 10%;
 `;
@@ -49,4 +56,5 @@ export const StyledColumn = styled.div`
   flex: 1;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;

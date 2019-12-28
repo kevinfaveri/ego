@@ -43,7 +43,6 @@ const rootQuery = graphql`
 
 function WorkSection() {
   const data = useStaticQuery(rootQuery);
-  console.log(data);
 
   return (
     <Hero bgColor="secondary" id="work">
