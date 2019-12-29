@@ -9,5 +9,5 @@ export default styled.div`
     secondary: theme('colors.backgroundSecondary'),
   })};
   display: inline-block;
-  padding: 50px 0;
+  padding: 10px 0;
 `;

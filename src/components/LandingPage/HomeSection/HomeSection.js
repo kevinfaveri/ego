@@ -3,13 +3,13 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Twemoji from 'twemoji';
 import Hero from '../../Hero';
 import AnimatedTyping from '../../AnimatedTyping';
-import { StyledMessage, StyledDivider } from './styles';
+import { StyledMessage, StyledUnderline } from './styles';
 import {
   getSingleMarkdownNode,
   getSingleImageFixed,
 } from '../../../utils/graphql-utils';
 import LazyImage from '../../LazyImage';
-import { StyledColumn, StyledRow } from '../../Layout/global-styles';
+import { StyledFlex, StyledColumn } from '../../Layout/global-styles';
 import { useTimeout } from '../../../hooks/useInterval';
 import SocialLinks from '../../SocialLinks';
 
@@ -66,10 +66,10 @@ function HomeSection() {
 
   return (
     <Hero bgColor="primary" id="home">
-      <StyledRow>
+      <StyledFlex>
         <StyledColumn>
           <AnimatedTyping steps={[500, typingPartOne]} />
-          <StyledDivider dividerWidth={dividerWidth} />
+          <StyledUnderline dividerWidth={dividerWidth} />
           <StyledMessage
             dangerouslySetInnerHTML={{
               __html: Twemoji.parse(contentPartOne),
@@ -87,17 +87,17 @@ function HomeSection() {
           />
         </StyledColumn>
         <StyledColumn>
-          <StyledRow>
+          <StyledFlex>
             <LazyImage
               imageFixed={getSingleImageFixed(kevinPhoto)}
-              style={{ borderRadius: '150px' }}
+              style={{ borderRadius: '150px', margin: '20px 0' }}
             />
-          </StyledRow>
-          <StyledRow>
+          </StyledFlex>
+          <StyledFlex>
             <SocialLinks />
-          </StyledRow>
+          </StyledFlex>
         </StyledColumn>
-      </StyledRow>
+      </StyledFlex>
     </Hero>
   );
 }

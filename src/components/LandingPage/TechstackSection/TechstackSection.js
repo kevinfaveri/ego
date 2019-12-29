@@ -1,9 +1,13 @@
 import React, { memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Hero from '../../Hero';
-import { StyledHeader, StyledContent } from './styles';
 import { getSingleMarkdownNode } from '../../../utils/graphql-utils';
-import { StyledColumn, StyledRow } from '../../Layout/global-styles';
+import {
+  StyledColumn,
+  StyledHeader,
+  StyledContent,
+  StyledFlexReverse,
+} from '../../Layout/global-styles';
 
 const rootQuery = graphql`
   query {
@@ -36,14 +40,14 @@ function TechstackSection() {
 
   return (
     <Hero bgColor="primary" id="techstack">
-      <StyledRow>
-        <StyledColumn>
-          <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
-        </StyledColumn>
+      <StyledFlexReverse>
         <StyledColumn>
           <StyledHeader>{title}</StyledHeader>
         </StyledColumn>
-      </StyledRow>
+        <StyledColumn>
+          <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
+        </StyledColumn>
+      </StyledFlexReverse>
     </Hero>
   );
 }

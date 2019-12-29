@@ -55,9 +55,32 @@ export default createGlobalStyle`
   }
 `;
 
-export const StyledRow = styled.div`
+export const StyledHeader = styled.h1`
+  font-size: 4rem;
+  @media (max-width: 1024px) {
+    font-size: 3rem;
+  }
+  color: ${theme('colors.primary')};
+  text-align: center;
+  margin: auto;
+`;
+
+export const StyledFlex = styled.div`
   display: flex;
   flex-direction: row;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+  padding-left: 10%;
+  padding-right: 10%;
+`;
+
+export const StyledFlexReverse = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
   padding-left: 10%;
   padding-right: 10%;
 `;
@@ -68,4 +91,24 @@ export const StyledColumn = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+export const StyledDivider = styled.div`
+  border: 1px solid teal;
+  visibility: hidden;
+  @media (max-width: 1024px) {
+    width: 50%;
+    visibility: visible;
+  }
+  align-self: center;
+  margin: 20px 0;
+`;
+
+export const StyledContent = styled.div`
+  font-size: 1.3rem;
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+  }
+  color: ${theme('colors.textPrimary')};
+  text-align: justify;
 `;

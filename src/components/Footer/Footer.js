@@ -1,36 +1,52 @@
 import React, { memo } from 'react';
 import Twemoji from 'twemoji';
-import StyledContainer, { StyledContent } from './styles';
-import { StyledColumn } from '../Layout/global-styles';
+import StyledContainer from './styles';
+import { StyledFlex, StyledContent } from '../Layout/global-styles';
 
 function Footer() {
-  const footerMessage = `Made with ❤️ by Kevin.
-  Built with
-  <a
-    class="hover-link"
-    target="_blank"
-    rel="noopener noreferrer"
-    href="https://www.gatsbyjs.org"
-  >
-    Gatsby
-  </a>.
-  Source code is available <a
-    class="hover-link"
-    target="_blank"
-    rel="noopener noreferrer"
-    href="https://github.com/kevinfaguiar/ego"
-  >
-    here
-  </a>.`;
   return (
     <StyledContainer>
-      <StyledColumn>
+      <StyledFlex style={{ margin: 'auto' }}>
         <StyledContent
           dangerouslySetInnerHTML={{
-            __html: Twemoji.parse(footerMessage),
+            __html: Twemoji.parse('Made with ❤️ by Kevin.'),
           }}
         />
-      </StyledColumn>
+      </StyledFlex>
+
+      <StyledFlex style={{ margin: 'auto' }}>
+        <StyledContent
+          dangerouslySetInnerHTML={{
+            __html: `
+            Built with
+            <a
+              class="hover-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.gatsbyjs.org"
+            >
+              Gatsby
+            </a>.
+            `,
+          }}
+        />
+      </StyledFlex>
+
+      <StyledFlex style={{ margin: 'auto' }}>
+        <StyledContent
+          dangerouslySetInnerHTML={{
+            __html: `
+            Source code is available <a
+              class="hover-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/kevinfaguiar/ego"
+            >
+              here
+            </a>.`,
+          }}
+        />
+      </StyledFlex>
     </StyledContainer>
   );
 }

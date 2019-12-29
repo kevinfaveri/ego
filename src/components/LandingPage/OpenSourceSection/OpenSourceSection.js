@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Hero from '../../Hero';
+import { StyledProjectColumn, StyledProjectTitle } from './styles';
+import { getSingleImageFixed } from '../../../utils/graphql-utils';
 import {
   StyledHeader,
-  StyledProjectColumn,
-  StyledProjectTitle,
   StyledContent,
-} from './styles';
-import { getSingleImageFixed } from '../../../utils/graphql-utils';
-import { StyledRow } from '../../Layout/global-styles';
+  StyledDivider,
+  StyledFlex,
+} from '../../Layout/global-styles';
 import LazyImage from '../../LazyImage';
 
 const rootQuery = graphql`
@@ -55,16 +55,16 @@ function OpenSourceSection() {
 
   return (
     <Hero bgColor="primary" id="open-source">
-      <StyledRow>
+      <StyledFlex>
         <StyledHeader>Open Source</StyledHeader>
-      </StyledRow>
-      <StyledRow style={{ margin: '30px 0' }}>
+      </StyledFlex>
+      <StyledFlex style={{ margin: '30px 0' }}>
         {data.allMarkdownRemark.edges.map((el, index) => {
           const { frontmatter, html } = el.node;
           const { projectTitle, projectPreviewImg, projectUrl } = frontmatter;
           return (
             <StyledProjectColumn key={index}>
-              <StyledRow>
+              <StyledFlex>
                 <a
                   href={projectUrl}
                   title={projectUrl}
@@ -80,21 +80,24 @@ function OpenSourceSection() {
                     }}
                   />
                 </a>
-              </StyledRow>
-              <StyledRow style={{ marginTop: '15px' }}>
+              </StyledFlex>
+              <StyledFlex style={{ marginTop: '15px' }}>
                 <StyledProjectTitle>{projectTitle}</StyledProjectTitle>
-              </StyledRow>
-              <StyledRow>
+              </StyledFlex>
+              <StyledFlex style={{ padding: 0 }}>
                 <StyledContent
                   dangerouslySetInnerHTML={{
                     __html: html,
                   }}
                 />
-              </StyledRow>
+              </StyledFlex>
+              {index + 1 !== data.allMarkdownRemark.edges.length && (
+                <StyledDivider />
+              )}
             </StyledProjectColumn>
           );
         })}
-      </StyledRow>
+      </StyledFlex>
     </Hero>
   );
 }

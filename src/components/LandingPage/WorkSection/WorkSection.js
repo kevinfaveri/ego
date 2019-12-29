@@ -1,9 +1,15 @@
 import React, { memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Hero from '../../Hero';
-import { StyledHeader, StyledWorkPeriod, StyledContent } from './styles';
+import { StyledWorkPeriod } from './styles';
 import { getSingleImageFixed } from '../../../utils/graphql-utils';
-import { StyledColumn, StyledRow } from '../../Layout/global-styles';
+import {
+  StyledColumn,
+  StyledDivider,
+  StyledHeader,
+  StyledContent,
+  StyledFlex,
+} from '../../Layout/global-styles';
 import LazyImage from '../../LazyImage';
 
 const rootQuery = graphql`
@@ -46,15 +52,15 @@ function WorkSection() {
 
   return (
     <Hero bgColor="secondary" id="work">
-      <StyledRow>
+      <StyledFlex>
         <StyledHeader>Work</StyledHeader>
-      </StyledRow>
+      </StyledFlex>
 
       {data.allMarkdownRemark.edges.map((el, index) => {
         const { frontmatter, html } = el.node;
         const { enterpriseLogo, enterpriseUrl, workPeriod } = frontmatter;
         return (
-          <StyledRow style={{ margin: '30px 0' }} key={index}>
+          <StyledFlex style={{ margin: '30px 0' }} key={index}>
             <StyledColumn>
               <a
                 href={enterpriseUrl}
@@ -79,7 +85,10 @@ function WorkSection() {
                 }}
               />
             </StyledColumn>
-          </StyledRow>
+            {index + 1 !== data.allMarkdownRemark.edges.length && (
+              <StyledDivider />
+            )}
+          </StyledFlex>
         );
       })}
     </Hero>
