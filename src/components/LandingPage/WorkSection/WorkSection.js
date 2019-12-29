@@ -50,11 +50,11 @@ function WorkSection() {
         <StyledHeader>Work</StyledHeader>
       </StyledRow>
 
-      {data.allMarkdownRemark.edges.map(el => {
+      {data.allMarkdownRemark.edges.map((el, index) => {
         const { frontmatter, html } = el.node;
         const { enterpriseLogo, enterpriseUrl, workPeriod } = frontmatter;
         return (
-          <StyledRow style={{ margin: '30px 0' }}>
+          <StyledRow style={{ margin: '30px 0' }} key={index}>
             <StyledColumn>
               <a
                 href={enterpriseUrl}

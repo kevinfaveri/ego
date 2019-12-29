@@ -59,11 +59,11 @@ function OpenSourceSection() {
         <StyledHeader>Open Source</StyledHeader>
       </StyledRow>
       <StyledRow style={{ margin: '30px 0' }}>
-        {data.allMarkdownRemark.edges.map(el => {
+        {data.allMarkdownRemark.edges.map((el, index) => {
           const { frontmatter, html } = el.node;
           const { projectTitle, projectPreviewImg, projectUrl } = frontmatter;
           return (
-            <StyledProjectColumn>
+            <StyledProjectColumn key={index}>
               <StyledRow>
                 <a
                   href={projectUrl}
