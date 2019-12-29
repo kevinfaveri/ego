@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Hero from '../../Hero';
 import { StyledHeader, StyledWorkPeriod, StyledContent } from './styles';
@@ -86,4 +86,4 @@ function WorkSection() {
   );
 }
 
-export default WorkSection;
+export default memo(WorkSection);

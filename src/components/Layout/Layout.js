@@ -1,45 +1,16 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import { ThemeProvider } from 'styled-components';
 import { useBlinkingFavicon } from '../../hooks/useBlinkingFavicon';
-import GlobalStyles from './global-styles';
-import Header from '../Header';
-import Footer from '../Footer';
-
-const theme = {
-  colors: {
-    primary: 'teal',
-    terciary: '#d9d9d9',
-    textPrimary: '#d9d9d9',
-    textSecondary: '#343531',
-    backgroundPrimary: '#2B2C2C',
-    backgroundSecondary: '#303131',
-  },
-};
+import ThemeContainer from './ThemeContainer';
 
 const Layout = ({ children }) => {
   useBlinkingFavicon();
-
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </ThemeProvider>
-  );
+  return <ThemeContainer>{children}</ThemeContainer>;
 };
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export default memo(Layout);

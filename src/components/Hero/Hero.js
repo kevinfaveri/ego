@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import StyledContainer from './styles';
 
@@ -23,4 +23,4 @@ Hero.propTypes = {
   bgColor: PropTypes.oneOf(['primary', 'secondary']),
 };
 
-export default Hero;
+export default memo(Hero);

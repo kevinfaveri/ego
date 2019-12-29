@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import StyledContainer from './styles';
 
-export default function Header() {
+function Header() {
   return <StyledContainer />;
 }
+
+export default memo(Header);

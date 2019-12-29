@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, memo } from 'react';
 import PropTypes from 'prop-types';
 import { type, type as loopType } from '@camwiegert/typical';
 
@@ -24,4 +24,4 @@ AnimatedTyping.propTypes = {
   loop: PropTypes.bool,
 };
 
-export default AnimatedTyping;
+export default memo(AnimatedTyping);

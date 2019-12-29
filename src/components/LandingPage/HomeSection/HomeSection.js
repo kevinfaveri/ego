@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Twemoji from 'twemoji';
 import Hero from '../../Hero';
@@ -102,4 +102,4 @@ function HomeSection() {
   );
 }
 
-export default HomeSection;
+export default memo(HomeSection);

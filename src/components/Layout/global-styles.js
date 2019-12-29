@@ -3,6 +3,11 @@ import { theme, withProp } from 'styled-tools';
 import { transparentize } from 'polished';
 
 export default createGlobalStyle`
+
+  * {
+    transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
+  }
+
   html {
     font-family: Lato, sans-serif;
     -ms-text-size-adjust: 100%;

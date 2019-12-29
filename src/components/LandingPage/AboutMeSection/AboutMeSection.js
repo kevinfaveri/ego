@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Hero from '../../Hero';
 import { StyledHeader, StyledContent } from './styles';
@@ -48,4 +48,4 @@ function AboutMeSection() {
   );
 }
 
-export default AboutMeSection;
+export default memo(AboutMeSection);

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import StyledContainer from './styles';
 
-export default function SocialLinks() {
+function SocialLinks() {
   return (
     <StyledContainer>
       <a
@@ -44,3 +44,5 @@ export default function SocialLinks() {
     </StyledContainer>
   );
 }
+
+export default memo(SocialLinks);

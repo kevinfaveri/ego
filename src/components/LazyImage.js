@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
@@ -24,4 +24,4 @@ LazyImage.propTypes = {
   imgStyle: PropTypes.object,
 };
 
-export default LazyImage;
+export default memo(LazyImage);

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Twemoji from 'twemoji';
 import StyledContainer, { StyledContent } from './styles';
 import { StyledColumn } from '../Layout/global-styles';
 
-export default function Footer() {
+function Footer() {
   const footerMessage = `Made with ❤️ by Kevin.
   Built with
   <a
@@ -34,3 +34,5 @@ export default function Footer() {
     </StyledContainer>
   );
 }
+
+export default memo(Footer);

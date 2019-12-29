@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Hero from '../../Hero';
 import {
@@ -99,4 +99,4 @@ function OpenSourceSection() {
   );
 }
 
-export default OpenSourceSection;
+export default memo(OpenSourceSection);
