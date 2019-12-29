@@ -14,7 +14,6 @@ import OpenSourceSection from '../components/LandingPage/OpenSourceSection/OpenS
   SOON LOGO
 </div>
 <div>i18n PT/EN OPTION</div>
-<div>REFAC FOR MOBILE (less than 1280 width)</div>
 DOWNLOAD CV
 BLOG
  */
