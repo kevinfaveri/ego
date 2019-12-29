@@ -15,7 +15,6 @@ import OpenSourceSection from '../components/LandingPage/OpenSourceSection/OpenS
 </div>
 <div>i18n PT/EN OPTION</div>
 <div>REFAC FOR MOBILE (less than 1280 width)</div>
-<div>ON SCROLL CHANGE PAGE TITLE ON BROWSER TAB</div>
 DOWNLOAD CV
 BLOG
  */
