@@ -7,4 +7,4 @@ enterpriseLogo: "../images/mobiliza.png"
 enterpriseUrl: "https://mobiliza.com.br/"
 workPeriod: "2019-Now"
 ---
-Responsible for developing backend and frontend solutions (mainly in NodeJS and React Web/Native). Has DevOps assignments (CI, Docker and Kubernetes).
+Responsible for developing back-end and front-end solutions (mainly in NodeJS and React Web/Native). Has DevOps assignments (CI, Docker and Kubernetes).
