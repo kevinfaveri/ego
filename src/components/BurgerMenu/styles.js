@@ -3,6 +3,7 @@ import { theme, withProp } from 'styled-tools';
 import { darken } from 'polished';
 
 export const StyledMenu = styled.nav`
+  overflow: auto;
   z-index: 1;
   display: flex;
   flex-direction: column;
