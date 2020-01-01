@@ -36,6 +36,7 @@ export const Menu = ({ open, setOpen }) => {
   const goToElement = useCallback(id => {
     const el = document.getElementById(id);
     window.scrollTo(0, el.offsetTop - 80);
+    document.documentElement.style.overflow = 'auto';
     setOpen(false);
   }, []);
 
@@ -59,13 +60,20 @@ Menu.propTypes = {
   setOpen: PropTypes.func.isRequired,
 };
 
-export const Burger = ({ open, setOpen }) => (
-  <StyledBurger open={open} onClick={() => setOpen(!open)}>
-    <div />
-    <div />
-    <div />
-  </StyledBurger>
-);
+export const Burger = ({ open, setOpen }) => {
+  const openBurger = useCallback(value => {
+    if (value) document.documentElement.style.overflow = 'hidden';
+    else document.documentElement.style.overflow = 'auto';
+    setOpen(value);
+  }, []);
+  return (
+    <StyledBurger open={open} onClick={() => openBurger(!open)}>
+      <div />
+      <div />
+      <div />
+    </StyledBurger>
+  );
+};
 
 Burger.propTypes = {
   open: PropTypes.bool.isRequired,
