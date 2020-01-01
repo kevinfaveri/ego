@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@camwiegert/typical": "^0.1.1",
+    "@rehooks/window-scroll-position": "^1.0.1",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.18.8",
     "gatsby-image": "^2.2.34",

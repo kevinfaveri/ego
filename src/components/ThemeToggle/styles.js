@@ -3,6 +3,7 @@ import { theme, withProp } from 'styled-tools';
 import { darken } from 'polished';
 
 export default styled.button`
+  z-index: 2;
   outline: none;
   border: none;
   cursor: pointer;
@@ -12,7 +13,7 @@ export default styled.button`
   width: 64px;
   background-color: ${withProp(
     ['theme.colors.backgroundPrimary'],
-    darken(0.15)
+    darken(0.1)
   )};
   position: fixed;
   bottom: 15px;

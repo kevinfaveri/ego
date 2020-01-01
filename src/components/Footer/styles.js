@@ -8,6 +8,6 @@ export default styled.footer`
     flex-direction: column;
   }
   width: 100%;
-  height: 10vh;
+  height: 100px;
   background-color: ${theme('colors.backgroundSecondary')};
 `;

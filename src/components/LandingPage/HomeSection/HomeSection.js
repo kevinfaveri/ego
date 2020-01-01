@@ -65,7 +65,7 @@ function HomeSection() {
   useTimeout(() => setDividerWidth('100%'), 700);
 
   return (
-    <Hero bgColor="primary" id="home">
+    <Hero bgColor="primary" id="home" hasPadding>
       <StyledFlex>
         <StyledColumn>
           <AnimatedTyping steps={[500, typingPartOne]} />

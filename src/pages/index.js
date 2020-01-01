@@ -8,11 +8,8 @@ import WorkSection from '../components/LandingPage/WorkSection';
 import OpenSourceSection from '../components/LandingPage/OpenSourceSection/OpenSourceSection';
 
 /**
+SITE LOGO ON HEADER
 404 PAGE
-<div>
-  HEADER WITH SMOOTH SCROLLING CONTAINING ALL SECTIONS / BLOG OPTION WITH
-  SOON LOGO
-</div>
 <div>i18n PT/EN OPTION</div>
 DOWNLOAD CV
 BLOG

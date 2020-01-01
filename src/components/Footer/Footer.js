@@ -5,7 +5,7 @@ import { StyledFlex, StyledContent } from '../Layout/global-styles';
 
 function Footer() {
   return (
-    <StyledContainer>
+    <StyledContainer id="credits">
       <StyledFlex style={{ margin: 'auto' }}>
         <StyledContent
           dangerouslySetInnerHTML={{

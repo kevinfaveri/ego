@@ -9,16 +9,21 @@ export default createGlobalStyle`
   }
 
   html {
+    margin:0;
+    padding:0;
     font-family: Lato, sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    height:100%;
   }
   
   body {
     font-family: Lato, sans-serif;
-    margin: 0;
+    margin:0;
+    padding:0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height:100%;
   }
 
   main {
