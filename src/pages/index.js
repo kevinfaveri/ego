@@ -8,7 +8,7 @@ import WorkSection from '../components/LandingPage/WorkSection';
 import OpenSourceSection from '../components/LandingPage/OpenSourceSection/OpenSourceSection';
 
 /**
-SITE LOGO ON HEADER
+ * LINK PARA PATREON E KOFI
 404 PAGE
 <div>i18n PT/EN OPTION</div>
 DOWNLOAD CV

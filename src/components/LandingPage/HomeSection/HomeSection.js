@@ -10,7 +10,7 @@ import {
 } from '../../../utils/graphql-utils';
 import LazyImage from '../../LazyImage';
 import { StyledFlex, StyledColumn } from '../../Layout/global-styles';
-import { useTimeout } from '../../../hooks/useInterval';
+import { useTimeout } from '../../../hooks/useTimeout';
 import SocialLinks from '../../SocialLinks';
 
 const rootQuery = graphql`
