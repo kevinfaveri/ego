@@ -27,7 +27,7 @@ const rootQuery = graphql`
 
 export default function Logo() {
   const data = useStaticQuery(rootQuery);
-  const [terminalState, setTerminalState] = useState();
+  const [terminalState, setTerminalState] = useState(0);
 
   useInterval(() => setTerminalState(terminalState === 1 ? 0 : 1), 700);
 

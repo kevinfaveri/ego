@@ -8,11 +8,11 @@ import WorkSection from '../components/LandingPage/WorkSection';
 import OpenSourceSection from '../components/LandingPage/OpenSourceSection/OpenSourceSection';
 
 /**
- * LINK PARA PATREON E KOFI
-404 PAGE
-<div>i18n PT/EN OPTION</div>
-DOWNLOAD CV
-BLOG
+TODO: LINK PARA PATREON E KOFI
+TODO: 404 PAGE
+TODO: i18n PT/EN OPTION</div>
+TODO: DOWNLOAD CV
+TODO: BLOG
  */
 const IndexPage = () => (
   <Layout>
