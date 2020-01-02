@@ -10,11 +10,6 @@ module.exports = {
       options: {
         trackingId: 'UA-155140180-1',
         head: true,
-        anonymize: false,
-        respectDNT: false,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: 'https://kevinfaveri.now.sh/',
       },
     },
     `gatsby-plugin-react-helmet`,
