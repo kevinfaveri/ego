@@ -5384,12 +5384,24 @@ gatsby-page-utils@^0.0.33:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+gatsby-plugin-analytics@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/gatsby-plugin-analytics/-/gatsby-plugin-analytics-0.2.0.tgz#540765215adef8639760909a649833e86bc688b5"
+  integrity sha512-LHDbJLZI7M1P0iTVrVVJD1S0mtLK/VhqPTyFjTp5R19UYRGxIznCY2BuZ5cVJMRb0bRl0lnhVnPYek+udz8onA==
+
 gatsby-plugin-extract-schema@^0.0.5:
   version "0.0.5"
   resolved "https://registry.npmjs.org/gatsby-plugin-extract-schema/-/gatsby-plugin-extract-schema-0.0.5.tgz#da798c0bdc9f8bf2cc19317467566c8505dd7b53"
   integrity sha512-99xOTw3OzjsMDvUa39V5Q+iUiyA1f5KmY26h2cqUjM4pu3SWL/RmODf4VKsRnrRNCTHUOyQ9RYROYusJsDuYug==
   dependencies:
     write "^1.0.3"
+
+gatsby-plugin-google-analytics@^2.1.31:
+  version "2.1.31"
+  resolved "https://registry.npmjs.org/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.31.tgz#d53d20aa26321f43fa8320c169db0316320f98f8"
+  integrity sha512-vwx2eB703Yatp1ZQ0lQDiAG3k9gyvDEENRmtp+myfadI8Sgtq+LA+3OYGLeT0MYdifUTW0Lhcp3qoIrng/41zg==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
 
 gatsby-plugin-manifest@^2.2.31:
   version "2.2.31"

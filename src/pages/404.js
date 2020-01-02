@@ -1,5 +1,4 @@
 import React from 'react';
-
 import SEO from '../components/seo';
 import Page404 from '../components/Page404';
 
