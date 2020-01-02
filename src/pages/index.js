@@ -9,9 +9,7 @@ import OpenSourceSection from '../components/LandingPage/OpenSourceSection/OpenS
 
 /**
 TODO: LINK PARA PATREON E KOFI
-TODO: 404 PAGE
 TODO: i18n PT/EN OPTION</div>
-TODO: DOWNLOAD CV
 TODO: BLOG
  */
 const IndexPage = () => (

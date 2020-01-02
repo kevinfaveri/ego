@@ -1,6 +1,13 @@
 import React, { memo } from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaEnvelope,
+  FaFilePdf,
+} from 'react-icons/fa';
 import StyledContainer from './styles';
+import CurriculumFile from '../../curriculum/curriculum.pdf';
 
 function SocialLinks() {
   return (
@@ -40,6 +47,9 @@ function SocialLinks() {
         rel="noopener noreferrer"
       >
         <FaTwitter />
+      </a>
+      <a href={CurriculumFile} download title="Resume">
+        <FaFilePdf />
       </a>
     </StyledContainer>
   );
