@@ -103,7 +103,13 @@ function OpenSourceSection() {
           Believe in the projects? Support me here:
         </StyledProjectTitle>
       </StyledFlex>
-      <StyledFlex style={{ justifyContent: 'center', margin: '10px' }}>
+      <StyledFlex
+        style={{
+          justifyContent: 'center',
+          textAlign: 'center',
+          margin: '10px',
+        }}
+      >
         <div
           dangerouslySetInnerHTML={{
             __html: `<a href='https://ko-fi.com/E1E11BKWW' target='_blank'>
