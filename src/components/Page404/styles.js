@@ -11,7 +11,13 @@ export default styled.div`
   color: ${theme('colors.primary')};
   text-align: center;
   > img {
-    border-radius: 240px;
+    height: 25%;
+    width: 25%;
+    border-radius: 50%;
+    @media (max-width: 576px) {
+      height: 50%;
+      width: 50%;
+    }
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
   }
 
