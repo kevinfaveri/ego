@@ -76,7 +76,7 @@ module.exports = {
         footnotes: true,
         pedantic: true,
         gfm: true,
-        plugins: [],
+        plugins: [`gatsby-remark-reading-time`],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

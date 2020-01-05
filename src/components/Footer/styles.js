@@ -9,5 +9,5 @@ export default styled.footer`
   }
   width: 100%;
   height: 100px;
-  background-color: ${theme('colors.backgroundSecondary')};
+  background-color: ${theme('colors.backgroundPrimary')};
 `;

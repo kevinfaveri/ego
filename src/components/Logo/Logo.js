@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import LazyImage from '../LazyImage';
-import { getSingleImageFixed } from '../../utils/graphql-utils';
 import { useInterval } from '../../hooks/useInterval';
 
 const rootQuery = graphql`
@@ -25,7 +24,7 @@ const rootQuery = graphql`
   }
 `;
 
-export default function Logo() {
+function Logo() {
   const data = useStaticQuery(rootQuery);
   const [terminalState, setTerminalState] = useState(0);
 
@@ -42,3 +41,5 @@ export default function Logo() {
     </a>
   );
 }
+
+export default memo(Logo);

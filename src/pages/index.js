@@ -10,7 +10,8 @@ import OpenSourceSection from '../components/LandingPage/OpenSourceSection/OpenS
 /**
 TODO: LINK PARA PATREON E KOFI
 TODO: i18n PT/EN OPTION</div>
-TODO: BLOG
+TODO: BLOG (BlogPostList (and Pagination), BlogPage excerpt mode, SearchBlogPosts)
+TODO: DIVIDER NO MENU PARA PORTFOLIO | BLOG, MAYBE OUTRO LAYOUT BLOG QUE AÍ USA UM MENU DIFERENTE...
  */
 const IndexPage = () => (
   <Layout>

@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import useWindowScrollPosition from '@rehooks/window-scroll-position';
+import { Location } from '@reach/router';
 import BurgerMenu from '../BurgerMenu';
-import StyledContainer from './styles';
+import StyledContainer, { StyledSiteSection } from './styles';
 import Logo from '../Logo';
 
 function Header() {
@@ -10,6 +11,14 @@ function Header() {
   return (
     <StyledContainer hasScrolled={hasScrolled}>
       <Logo />
+      <Location>
+        {({ location }) =>
+          location.pathname.includes('blog') && (
+            <StyledSiteSection href="/blog">Blog</StyledSiteSection>
+          )
+        }
+      </Location>
+
       <BurgerMenu />
     </StyledContainer>
   );

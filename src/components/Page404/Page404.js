@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 
 import StyledContainer, { GlobalStyles } from './styles';
 import ErrorXp from '../../images/error_xp.gif';
 
-export default function Page404() {
+function Page404() {
   return (
     <StyledContainer>
       <GlobalStyles />
@@ -18,3 +18,5 @@ export default function Page404() {
     </StyledContainer>
   );
 }
+
+export default memo(Page404);

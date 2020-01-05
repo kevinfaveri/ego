@@ -1,6 +1,7 @@
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useCallback, memo } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
+import { Location } from '@reach/router';
 import { StyledBurger, StyledMenu } from './styles';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 
@@ -33,25 +34,44 @@ export const Menu = ({ open, setOpen }) => {
     frontmatter: { sections, sectionIds },
   } = data.allMarkdownRemark.edges[0].node;
 
-  const goToElement = useCallback(id => {
-    const el = document.getElementById(id);
-    window.scrollTo(0, el.offsetTop - 80);
-    if (window.screen.width <= 576)
-      document.documentElement.style.overflow = 'auto';
-    setOpen(false);
+  const goToElement = useCallback((id, { navigate, location }) => {
+    const goToFunc = () => {
+      let el = document.getElementById(id);
+      if (!el) el = window;
+      window.scrollTo(0, el.offsetTop - 80);
+      if (window.screen.width <= 576)
+        document.documentElement.style.overflow = 'auto';
+      setOpen(false);
+    };
+
+    if (location.pathname !== '/') {
+      navigate('/').then(() => {
+        setTimeout(() => {
+          goToFunc();
+        }, 300);
+      });
+    } else {
+      goToFunc();
+    }
   }, []);
 
   return (
     <StyledMenu open={open}>
-      {sections.map((el, index) => (
-        <button
-          type="button"
-          key={index}
-          onClick={() => goToElement(sectionIds[index])}
-        >
-          {el}
-        </button>
-      ))}
+      <Location>
+        {({ navigate, location }) =>
+          sections.map((el, index) => (
+            <button
+              type="button"
+              key={index}
+              onClick={() =>
+                goToElement(sectionIds[index], { navigate, location })
+              }
+            >
+              {el}
+            </button>
+          ))
+        }
+      </Location>
     </StyledMenu>
   );
 };
@@ -101,4 +121,4 @@ export const BurgerMenu = () => {
   );
 };
 
-export default BurgerMenu;
+export default memo(BurgerMenu);

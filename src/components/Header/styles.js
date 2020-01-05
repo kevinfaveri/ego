@@ -22,3 +22,24 @@ export default styled.header`
     ''
   )}
 `;
+
+export const StyledSiteSection = styled.a`
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  margin: 20px 0;
+  padding-left: 10px;
+  border-radius: 3px;
+  font-size: 30px;
+  font-weight: bold;
+  color: ${theme('colors.primary')};
+  text-decoration: none;
+  ::before {
+    content: '|';
+    padding-right: 20px;
+  }
+
+  :hover {
+    color: ${withProp(['theme.colors.primary'], darken(0.1))};
+  }
+`;
