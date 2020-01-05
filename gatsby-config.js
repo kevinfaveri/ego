@@ -12,6 +12,7 @@ module.exports = {
         head: true,
       },
     },
+    'gatsby-plugin-zeit-now',
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
