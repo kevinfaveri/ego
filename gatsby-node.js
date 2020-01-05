@@ -1,7 +1,46 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
-// You can delete this file if you're not using it
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
+  if (
+    node.internal.type === `MarkdownRemark` &&
+    node.fileAbsolutePath.includes('blog-pages')
+  ) {
+    const slug = createFilePath({ node, getNode, basePath: `blog` });
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    });
+  }
+};
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const result = await graphql(`
+    query {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/(blog-pages)/" } }
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: `blog${node.fields.slug}`,
+      component: path.resolve(`./src/components/BlogPost/BlogPost.js`),
+      context: {
+        slug: node.fields.slug,
+      },
+    });
+  });
+};

@@ -35,7 +35,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
     height:100%;
     overflow: hidden;
-    background-color: ${theme('colors.backgroundSecondary')};
+    background-color: ${theme('colors.backgroundPrimary')};
   }
   
   body {
@@ -45,6 +45,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height:100%;
+    background-color: ${theme('colors.backgroundPrimary')};
   }
 
   .hover-link {

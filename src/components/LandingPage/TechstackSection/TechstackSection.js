@@ -13,7 +13,7 @@ const rootQuery = graphql`
   query {
     allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/(markdown-onepage)/" }
+        fileAbsolutePath: { regex: "/(onepage-content)/" }
         frontmatter: { id: { eq: "055f6de2-5aa1-4fb4-8a26-8d407f1159aa" } }
       }
     ) {

@@ -24,15 +24,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'markdown-onepage',
-        path: `${__dirname}/src/markdown-onepage`,
+        name: 'onepage-content',
+        path: `${__dirname}/src/onepage-content`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'markdown-pages',
-        path: `${__dirname}/src/markdown-pages`,
+        name: 'blog-pages',
+        path: `${__dirname}/src/blog-pages`,
       },
     },
     `gatsby-transformer-sharp`,

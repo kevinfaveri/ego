@@ -16,7 +16,7 @@ const rootQuery = graphql`
   query {
     allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/(markdown-onepage)/" }
+        fileAbsolutePath: { regex: "/(onepage-content)/" }
         frontmatter: { type: { eq: "work" } }
       }
       sort: { order: DESC, fields: [frontmatter___id] }
