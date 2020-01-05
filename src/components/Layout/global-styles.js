@@ -34,7 +34,7 @@ export default createGlobalStyle`
   .hover-link {
     text-decoration: none;
     border-radius: 5px;
-    color: inherit;
+    color: ${theme('colors.textPrimary')};
     background-color: ${theme('colors.primary')};
 
     :hover {
