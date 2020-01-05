@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import StyledContainer, { StyledContent } from './styles';
 import Layout from '../Layout';
 import BlogPostHeader from '../BlogPostHeader';
+import SEO from '../seo';
 
 const BlogPost = ({ data }) => {
   const {
@@ -15,6 +16,7 @@ const BlogPost = ({ data }) => {
   } = data.markdownRemark;
   return (
     <Layout>
+      <SEO title={`Blog | ${title}`} />
       <StyledContainer>
         <BlogPostHeader
           title={title}
@@ -36,6 +38,7 @@ BlogPost.propTypes = {
       title: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
+      authorPhoto: PropTypes.object.isRequired,
     })),
     fields: PropTypes.shape(() => ({
       readingTime: PropTypes.shape(() => ({

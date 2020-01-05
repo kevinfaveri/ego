@@ -8,6 +8,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     node.fileAbsolutePath.includes('blog-pages')
   ) {
     const slug = createFilePath({ node, getNode, basePath: `blog` });
+    console.log('slug ->', slug);
     createNodeField({
       node,
       name: `slug`,
