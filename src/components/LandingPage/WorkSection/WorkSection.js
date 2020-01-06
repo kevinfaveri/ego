@@ -5,7 +5,7 @@ import { StyledWorkPeriod } from './styles';
 import { getSingleImageFixed } from '../../../utils/graphql-utils';
 import {
   StyledColumn,
-  StyledDivider,
+  StyledDividerResponsive,
   StyledHeader,
   StyledContent,
   StyledFlex,
@@ -86,7 +86,7 @@ function WorkSection() {
               />
             </StyledColumn>
             {index + 1 !== data.allMarkdownRemark.edges.length && (
-              <StyledDivider />
+              <StyledDividerResponsive />
             )}
           </StyledFlex>
         );

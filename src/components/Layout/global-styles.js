@@ -100,13 +100,20 @@ export const StyledColumn = styled.div`
   justify-content: center;
 `;
 
-export const StyledDivider = styled.div`
+export const StyledDividerResponsive = styled.div`
   border: 1px solid teal;
   visibility: hidden;
   @media (max-width: 1024px) {
     width: 50%;
     visibility: visible;
   }
+  align-self: center;
+  margin: 20px 0;
+`;
+
+export const StyledDivider = styled.div`
+  border: 1px solid teal;
+  width: 50%;
   align-self: center;
   margin: 20px 0;
 `;

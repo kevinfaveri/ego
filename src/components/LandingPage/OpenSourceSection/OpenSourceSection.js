@@ -6,7 +6,7 @@ import { getSingleImageFixed } from '../../../utils/graphql-utils';
 import {
   StyledHeader,
   StyledContent,
-  StyledDivider,
+  StyledDividerResponsive,
   StyledFlex,
 } from '../../Layout/global-styles';
 import LazyImage from '../../LazyImage';
@@ -92,7 +92,7 @@ function OpenSourceSection() {
                 />
               </StyledFlex>
               {index + 1 !== data.allMarkdownRemark.edges.length && (
-                <StyledDivider />
+                <StyledDividerResponsive />
               )}
             </StyledProjectColumn>
           );
