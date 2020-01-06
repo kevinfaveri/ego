@@ -11,6 +11,7 @@ import OpenSourceSection from '../components/LandingPage/OpenSourceSection/OpenS
 TODO: LINK PARA PATREON E KOFI
 TODO: i18n PT/EN OPTION</div>
 TODO: SearchBlogPosts comum [DIGITA, PESQUISA POR QUERY NA URL ON CLICK ENTER OU CLICK GLASS MAGNIFIER] OU COM DATASET AI FAZ REALTIME...
+TODO: TinaCMS testar
  */
 const IndexPage = () => (
   <Layout>
