@@ -8,7 +8,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     node.fileAbsolutePath.includes('blog-pages')
   ) {
     const slug = createFilePath({ node, getNode, basePath: `blog` });
-    console.log('slug ->', slug);
     createNodeField({
       node,
       name: `slug`,
@@ -19,10 +18,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+
   const result = await graphql(`
     query {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/(blog-pages)/" } }
+        sort: { order: DESC, fields: [frontmatter___id] }
       ) {
         edges {
           node {
@@ -41,6 +42,22 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/components/BlogPost/BlogPost.js`),
       context: {
         slug: node.fields.slug,
+      },
+    });
+  });
+
+  const posts = result.data.allMarkdownRemark.edges;
+  const postsPerPage = 5;
+  const numPages = Math.ceil(posts.length / postsPerPage);
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: path.resolve('./src/components/BlogPostList/BlogPostList.js'),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
       },
     });
   });

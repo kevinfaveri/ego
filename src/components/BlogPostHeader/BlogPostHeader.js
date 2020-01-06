@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import StyledContainer, {
   StyledTitle,
-  StyledPostDetails,
+  StyledTitleAnchor,
   StyledAuthorAvatar,
   StyledAuthorName,
   StyledPostData,
@@ -12,6 +12,7 @@ import LazyImage from '../LazyImage';
 import { getSingleImageFixed } from '../../utils/graphql-utils';
 
 function BlogPostHeader({
+  slug,
   title,
   date,
   author,
@@ -20,7 +21,11 @@ function BlogPostHeader({
 }) {
   return (
     <StyledContainer>
-      <StyledTitle>{title}</StyledTitle>
+      {slug ? (
+        <StyledTitleAnchor href={`/blog${slug}`}>{title}</StyledTitleAnchor>
+      ) : (
+        <StyledTitle>{title}</StyledTitle>
+      )}
       <StyledAuthorAvatar>
         <LazyImage
           imageFixed={getSingleImageFixed(authorPhoto)}
@@ -37,7 +42,12 @@ function BlogPostHeader({
   );
 }
 
+BlogPostHeader.defaultProps = {
+  slug: undefined,
+};
+
 BlogPostHeader.propTypes = {
+  slug: PropTypes.string,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,

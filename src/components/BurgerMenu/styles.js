@@ -70,7 +70,7 @@ export const StyledBurger = styled.button`
   cursor: pointer;
   padding: 0;
   z-index: 10;
-  margin: 10px 0;
+  margin: 20px 0;
 
   &:focus {
     outline: none;
