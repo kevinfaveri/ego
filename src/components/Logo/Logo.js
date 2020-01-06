@@ -31,7 +31,7 @@ function Logo() {
   useInterval(() => setTerminalState(terminalState === 1 ? 0 : 1), 700);
 
   return (
-    <a href="#home">
+    <a href="/#home">
       <LazyImage
         imageFixed={data.allImageSharp.edges[terminalState].node.fixed}
         style={{

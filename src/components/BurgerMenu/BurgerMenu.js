@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { Location } from '@reach/router';
 import { StyledBurger, StyledMenu } from './styles';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
+import { StyledDivider } from '../Layout/global-styles';
 
 const rootQuery = graphql`
   query {
@@ -41,7 +42,6 @@ export const Menu = ({ open, setOpen }) => {
       window.scrollTo(0, el.offsetTop - 80);
       if (window.screen.width <= 576)
         document.documentElement.style.overflow = 'auto';
-      setOpen(false);
     };
 
     if (location.pathname !== '/') {
@@ -52,25 +52,30 @@ export const Menu = ({ open, setOpen }) => {
       });
     } else {
       goToFunc();
+      setOpen(false);
     }
   }, []);
 
   return (
     <StyledMenu open={open}>
       <Location>
-        {({ navigate, location }) =>
-          sections.map((el, index) => (
-            <button
-              type="button"
-              key={index}
-              onClick={() =>
-                goToElement(sectionIds[index], { navigate, location })
-              }
-            >
-              {el}
-            </button>
-          ))
-        }
+        {({ navigate, location }) => (
+          <>
+            {sections.map((el, index) => (
+              <button
+                type="button"
+                key={index}
+                onClick={() =>
+                  goToElement(sectionIds[index], { navigate, location })
+                }
+              >
+                {el}
+              </button>
+            ))}
+            <StyledDivider />
+            <a href="/blog">Blog</a>
+          </>
+        )}
       </Location>
     </StyledMenu>
   );

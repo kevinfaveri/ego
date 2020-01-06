@@ -26,7 +26,8 @@ export const StyledMenu = styled.nav`
     width: 100%;
   }
 
-  button {
+  button,
+  a {
     outline: none;
     cursor: pointer;
     background-color: ${withProp(

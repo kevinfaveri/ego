@@ -48,7 +48,12 @@ function SocialLinks() {
       >
         <FaTwitter />
       </a>
-      <a href={CurriculumFile} download title="Resume">
+      <a
+        className="hover-img-link"
+        href={CurriculumFile}
+        download
+        title="Resume"
+      >
         <FaFilePdf />
       </a>
     </StyledContainer>
