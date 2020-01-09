@@ -112,7 +112,7 @@ Burger.propTypes = {
 export const BurgerMenu = () => {
   const [open, setOpen] = useState(false);
   const node = useRef();
-  useOnClickOutside(node, () => {
+  useOnClickOutside(open ? node : false, () => {
     if (window.screen.width <= 576) {
       document.documentElement.style.overflow = 'auto';
     }
