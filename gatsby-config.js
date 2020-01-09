@@ -12,6 +12,19 @@ module.exports = {
         head: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Kevin Faveri Portfolio`,
+        short_name: `Kevin Faveri`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#008080`,
+        display: `standalone`,
+        icon: `src/images/terminal.svg`,
+      },
+    },
+    `gatsby-plugin-offline`,
     'gatsby-plugin-zeit-now',
     `gatsby-plugin-react-helmet`,
     {
@@ -37,18 +50,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `ego-kevin`,
-        short_name: `ego`,
-        start_url: `/`,
-        background_color: `#212121`,
-        theme_color: `#212121`,
-        display: `minimal-ui`,
-        icon: `src/images/terminal.png`, // This path is relative to the root of the site.
-      },
-    },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -79,8 +80,5 @@ module.exports = {
         plugins: [`gatsby-remark-reading-time`],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 };
