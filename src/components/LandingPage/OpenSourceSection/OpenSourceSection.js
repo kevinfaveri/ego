@@ -98,27 +98,6 @@ function OpenSourceSection() {
           );
         })}
       </StyledFlex>
-      <StyledFlex style={{ justifyContent: 'center', margin: '10px' }}>
-        <StyledProjectTitle>
-          Believe in the projects? Support me here:
-        </StyledProjectTitle>
-      </StyledFlex>
-      <StyledFlex
-        style={{
-          justifyContent: 'center',
-          textAlign: 'center',
-          margin: '10px',
-        }}
-      >
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `<a href='https://ko-fi.com/E1E11BKWW' target='_blank'>
-            <img height='50' style='border:0px;height:50px;' 
-            src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' />
-          </a>`,
-          }}
-        />
-      </StyledFlex>
     </Hero>
   );
 }
