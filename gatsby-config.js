@@ -6,6 +6,20 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-tinacms',
+      options: {
+        sidebar: {
+          hidden: process.env.NODE_ENV === 'production',
+          position: 'displace',
+        },
+        plugins: [
+          // We'll add some Tinacms plugins in the next step.
+        ],
+      },
+    },
+    'gatsby-tinacms-json',
+    'gatsby-transformer-json',
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-155140180-1',
@@ -37,8 +51,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'onepage-content',
-        path: `${__dirname}/src/onepage-content`,
+        name: 'customPages',
+        path: `${__dirname}/src/custom-pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'metadata',
+        path: `${__dirname}/src/metadata`,
       },
     },
     {

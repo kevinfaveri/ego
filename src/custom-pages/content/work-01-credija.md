@@ -3,7 +3,7 @@ id: "1"
 type: "work"
 date: "2019-12-27"
 enterpriseName: "Credija"
-enterpriseLogo: "../images/credija.png"
+enterpriseLogo: "../../images/credija.png"
 enterpriseUrl: "https://www.credija.com.br/"
 workPeriod: "2015-2019"
 ---

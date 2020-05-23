@@ -6,15 +6,15 @@ import {
   StyledColumn,
   StyledHeader,
   StyledContent,
-  StyledFlex,
+  StyledFlexReverse,
 } from '../../Layout/global-styles';
 
 const rootQuery = graphql`
   query {
     allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/(onepage-content)/" }
-        frontmatter: { id: { eq: "871d6ed8-7dc0-4ec0-aeed-344eb4a77ab9" } }
+        fileAbsolutePath: { regex: "/(onepage)/" }
+        frontmatter: { id: { eq: "055f6de2-5aa1-4fb4-8a26-8d407f1159aa" } }
       }
     ) {
       totalCount
@@ -33,23 +33,23 @@ const rootQuery = graphql`
   }
 `;
 
-function AboutMeSection() {
+function TechstackSection() {
   const data = useStaticQuery(rootQuery);
   const { frontmatter, html } = getSingleMarkdownNode(data);
   const { id, title } = frontmatter;
 
   return (
-    <Hero bgColor="secondary" id="about-me">
-      <StyledFlex>
+    <Hero bgColor="primary" id="techstack">
+      <StyledFlexReverse>
         <StyledColumn>
           <StyledHeader>{title}</StyledHeader>
         </StyledColumn>
         <StyledColumn>
           <StyledContent dangerouslySetInnerHTML={{ __html: html }} />
         </StyledColumn>
-      </StyledFlex>
+      </StyledFlexReverse>
     </Hero>
   );
 }
 
-export default memo(AboutMeSection);
+export default memo(TechstackSection);

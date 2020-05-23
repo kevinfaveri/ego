@@ -8,32 +8,22 @@ import { StyledDivider } from '../Layout/global-styles';
 
 const rootQuery = graphql`
   query {
-    allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/(onepage-content)/" }
-        frontmatter: { id: { eq: "menu-items" } }
-      }
+    metadataJson(
+      fileRelativePath: { regex: "/(metadata/menu-items.json)/" }
+      id: { eq: "menu-items" }
     ) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            sections
-            sectionIds
-          }
-          excerpt
-        }
-      }
+      id
+      sections
+      sectionIds
     }
   }
 `;
 
 export const Menu = ({ open, setOpen }) => {
-  const data = useStaticQuery(rootQuery);
   const {
-    frontmatter: { sections, sectionIds },
-  } = data.allMarkdownRemark.edges[0].node;
+    metadataJson: { sections, sectionIds },
+  } = useStaticQuery(rootQuery);
+  console.log('sections', sections);
 
   const goToElement = useCallback((id, { navigate, location }) => {
     const goToFunc = () => {

@@ -8,6 +8,7 @@ function Footer() {
     <StyledContainer id="credits">
       <StyledFlex style={{ margin: 'auto' }}>
         <StyledContent
+          textAlign="center"
           dangerouslySetInnerHTML={{
             __html: Twemoji.parse('Made with ❤️ by Kevin.'),
           }}
@@ -16,6 +17,7 @@ function Footer() {
 
       <StyledFlex style={{ margin: 'auto' }}>
         <StyledContent
+          textAlign="center"
           dangerouslySetInnerHTML={{
             __html: `
             Built with
@@ -34,6 +36,7 @@ function Footer() {
 
       <StyledFlex style={{ margin: 'auto' }}>
         <StyledContent
+          textAlign="center"
           dangerouslySetInnerHTML={{
             __html: `
             Source code is available <a

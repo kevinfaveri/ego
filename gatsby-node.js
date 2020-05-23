@@ -62,3 +62,17 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 };
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+  deletePage(page);
+  console.log('page.path ->', page.path);
+  console.log('page.context ->', page.context);
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      pagePath: page.path,
+    },
+  });
+};

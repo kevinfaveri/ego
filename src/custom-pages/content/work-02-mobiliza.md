@@ -3,7 +3,7 @@ id: "2"
 type: "work"
 date: "2019-12-27"
 enterpriseName: "Mobiliza"
-enterpriseLogo: "../images/mobiliza.png"
+enterpriseLogo: "../../images/mobiliza.png"
 enterpriseUrl: "https://mobiliza.com.br/"
 workPeriod: "2019-Now"
 ---

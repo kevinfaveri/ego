@@ -6,5 +6,5 @@ typingPartOne: "Hi, I’m Kevin"
 contentPartOne: "Ingenious Software Engineer 👨‍💻"
 contentPartTwo: "Enthusiastic Open Sourcerer 🧙"
 contentPartThree: "Proud Dad of Ghost 🐶"
-kevinPhoto: "../images/profile/kevin-faveri.png"
+kevinPhoto: "../../images/profile/kevin-faveri.png"
 ---

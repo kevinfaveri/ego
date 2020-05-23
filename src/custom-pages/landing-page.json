@@ -1,0 +1,10 @@
+{
+  "name": "landing-page",
+  "routePath": "/",
+  "sections": [
+    {
+      "contentId": "871d6ed8-7dc0-4ec0-aeed-344eb4a77ab9",
+      "componentName": "AboutMeSection"
+    }
+  ]
+}

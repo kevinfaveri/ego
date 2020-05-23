@@ -1,9 +1,10 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import useCustomPage from '../hooks/useCustomPage';
+
 /**
 TODO: LINK PARA PATREON E KOFI
 TODO: i18n PT/EN OPTION</div>
@@ -19,7 +20,7 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ data }) => {
+const SomeOtherPage = ({ data }) => {
   const customPageData = useCustomPage(data);
 
   return (
@@ -30,8 +31,8 @@ const IndexPage = ({ data }) => {
   );
 };
 
-IndexPage.propTypes = {
+SomeOtherPage.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default IndexPage;
+export default SomeOtherPage;

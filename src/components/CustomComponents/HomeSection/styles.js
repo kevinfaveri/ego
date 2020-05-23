@@ -6,7 +6,6 @@ export const StyledMessage = styled.div`
   @media (max-width: 1024px) {
     font-size: 1.2rem;
   }
-  margin-top: 1.5rem;
   color: ${theme('colors.textPrimary')};
   text-align: center;
 `;
