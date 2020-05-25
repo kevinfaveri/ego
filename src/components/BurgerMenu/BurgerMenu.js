@@ -8,7 +8,7 @@ import { StyledDivider } from '../Layout/global-styles';
 
 const rootQuery = graphql`
   query {
-    metadataJson(
+    menuItemsJson(
       fileRelativePath: { regex: "/(metadata/menu-items.json)/" }
       id: { eq: "menu-items" }
     ) {
@@ -21,7 +21,7 @@ const rootQuery = graphql`
 
 export const Menu = ({ open, setOpen }) => {
   const {
-    metadataJson: { sections, sectionIds },
+    menuItemsJson: { sections, sectionIds },
   } = useStaticQuery(rootQuery);
   console.log('sections', sections);
 

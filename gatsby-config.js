@@ -58,8 +58,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'metadata',
-        path: `${__dirname}/src/metadata`,
+        name: 'menu-items',
+        path: `${__dirname}/src/metadata/menu-items`,
       },
     },
     {

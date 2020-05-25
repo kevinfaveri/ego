@@ -18,8 +18,44 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+  const customPagesResult = await graphql(`
+    query {
+      allCustomPagesJson {
+        edges {
+          node {
+            name
+            headerTitle
+            routePath
+            sections
+          }
+        }
+      }
+    }
+  `);
 
-  const result = await graphql(`
+  let customPagesData;
+  try {
+    customPagesData = customPagesResult.data.allCustomPagesJson.edges.map(
+      edgeObj => edgeObj.node
+    );
+  } catch {
+    customPagesData = [];
+  }
+
+  customPagesData.forEach(customPage => {
+    const pageObj = {
+      path: customPage.routePath,
+      component: path.resolve(`./src/templates/PageTemplate.js`),
+      context: {
+        slug: customPage.routePath,
+        ...customPage,
+      },
+    };
+    createPage(pageObj);
+  });
+
+  // Blog Pages
+  const blogPages = await graphql(`
     query {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/(blog-pages)/" } }
@@ -36,7 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  blogPages.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: `blog${node.fields.slug}`,
       component: path.resolve(`./src/components/BlogPost/BlogPost.js`),
@@ -46,7 +82,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  const posts = result.data.allMarkdownRemark.edges;
+  const posts = blogPages.data.allMarkdownRemark.edges;
   const postsPerPage = 5;
   const numPages = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: numPages }).forEach((_, i) => {
@@ -60,19 +96,5 @@ exports.createPages = async ({ graphql, actions }) => {
         currentPage: i + 1,
       },
     });
-  });
-};
-
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions;
-  deletePage(page);
-  console.log('page.path ->', page.path);
-  console.log('page.context ->', page.context);
-  createPage({
-    ...page,
-    context: {
-      ...page.context,
-      pagePath: page.path,
-    },
   });
 };
