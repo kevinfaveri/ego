@@ -1,7 +1,6 @@
 {
-  "name": "Home",
-  "headerTitle": "Portfolio",
-  "routePath": "/",
+  "name": "Portfolio",
+  "routePath": "/test",
   "sections": [
     "871d6ed8-7dc0-4ec0-aeed-344eb4a77ab9"
   ]
