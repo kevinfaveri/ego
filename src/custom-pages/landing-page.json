@@ -4,7 +4,12 @@
   "sections": [
     {
       "title": "Title here.",
-      "html": "<p>Edit your content here.D SDASDSA</p>",
+      "html": "<p>Edit your content here.<br><br>teste</p>",
+      "_template": "AboutMeSection"
+    },
+    {
+      "title": "title",
+      "html": "html",
       "_template": "AboutMeSection"
     }
   ]
