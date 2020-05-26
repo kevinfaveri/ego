@@ -3,10 +3,9 @@
   "routePath": "/",
   "sections": [
     {
-      "title": "Title here SEILA",
-      "html": "<p>Edit your content hesadsasare.</p>",
-      "_template": "AboutMeSection",
-      "content": "TEST"
+      "title": "Title here.",
+      "html": "<p>Edit your content here SEILA</p>",
+      "_template": "AboutMeSection"
     }
   ]
 }
