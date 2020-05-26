@@ -19,6 +19,7 @@ import {
 // TODO: Blog post editor
 // TODO: Create blog pages on demand too
 // TODO: Put emoji parser in every text present
+// TODO: TinaCMS dark theme accordingly page theme
 const CustomComponentProvider = ({ children, pageContext }) => {
   const [state, dispatch] = useReducer(
     customPageReducer,
