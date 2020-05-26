@@ -3,8 +3,8 @@
   "routePath": "/",
   "sections": [
     {
-      "title": "Title here.",
-      "html": "<p>Edit your content here.<br><br>teste</p>",
+      "title": "About Me",
+      "html": "<p>I'm&nbsp;a&nbsp;software&nbsp;engineer&nbsp;with&nbsp;5+&nbsp;years&nbsp;of&nbsp;experience&nbsp;and&nbsp;a&nbsp;bachelor's&nbsp;degree&nbsp;in&nbsp;Computer&nbsp;Science.&nbsp;I'm&nbsp;also&nbsp;an&nbsp;open-source&nbsp;collaborator,&nbsp;either&nbsp;through&nbsp;my&nbsp;own&nbsp;or&nbsp;other&nbsp;people's&nbsp;projects.</p><p><br>I'm&nbsp;that&nbsp;kind&nbsp;of&nbsp;person&nbsp;that&nbsp;gets&nbsp;bored&nbsp;easily,&nbsp;so&nbsp;I'm&nbsp;constantly&nbsp;studying&nbsp;new&nbsp;approaches,&nbsp;technologies,&nbsp;and&nbsp;paradigms&nbsp;to&nbsp;turn&nbsp;the&nbsp;tables...&nbsp;The&nbsp;dynamics&nbsp;&nbsp;of&nbsp;programming&nbsp;is&nbsp;what&nbsp;drives&nbsp;me!<br>Oh,&nbsp;of&nbsp;course...&nbsp;Ghost&nbsp;is&nbsp;my&nbsp;son,&nbsp;&lt;a&nbsp;&nbsp;<em>class</em>=\"hover-link\"&nbsp;<em>target</em>=\"_blank\"&nbsp;<em>href</em>=\"<a href=\"https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDY0MjA2MDEwMDQ4MjAz?igshid=ufxqukxq49ix&amp;story_media_id=2041017251129548042_310986014\" title=\"https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDY0MjA2MDEwMDQ4MjAz?igshid=ufxqukxq49ix&amp;story_media_id=2041017251129548042_310986014\">https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDY0MjA2MDEwMDQ4MjAz?igshid=ufxqukxq49ix&amp;story_media_id=2041017251129548042_310986014</a>\"&nbsp;<em>title</em>=\"Ghost&nbsp;Instagram&nbsp;Highlight\"&gt;a&nbsp;beautiful&nbsp;Akita&lt;/a&gt;.</p>",
       "_template": "AboutMeSection"
     },
     {
