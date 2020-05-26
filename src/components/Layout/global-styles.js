@@ -37,6 +37,16 @@ export default createGlobalStyle`
     }
   }
 
+  a {
+    text-decoration: none;
+    border-radius: 5px;
+    color: ${theme('colors.primary')};
+
+    :hover {
+      color: ${withProp(['theme.colors.primary'], transparentize(0.4))};
+    }
+  }
+
   .hover-link {
     text-decoration: none;
     border-radius: 5px;

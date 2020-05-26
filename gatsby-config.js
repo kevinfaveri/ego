@@ -13,11 +13,12 @@ module.exports = {
           position: 'displace',
         },
         plugins: [
+          'gatsby-tinacms-git',
+          'gatsby-tinacms-json',
           // We'll add some Tinacms plugins in the next step.
         ],
       },
     },
-    'gatsby-tinacms-json',
     'gatsby-transformer-json',
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -55,6 +56,15 @@ module.exports = {
         path: `${__dirname}/src/custom-pages`,
       },
     },
+    /*
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'customPagesContents',
+        path: `${__dirname}/src/custom-pages/custom-pages-contents`,
+      },
+    },
+    */
     {
       resolve: `gatsby-source-filesystem`,
       options: {

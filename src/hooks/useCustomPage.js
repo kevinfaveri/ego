@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useReducer, useCallback } from 'react';
+import React, { useEffect, useReducer, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import Loadable from '@loadable/component';
-import { timeout } from 'promise-timeout';
+import CustomComponents from '../components/CustomComponents';
 import HeadingSection from '../components/CustomComponents/HeadingSection';
 import {
   customPageReducer,
@@ -9,31 +8,18 @@ import {
   CustomPageContext,
 } from '../reducers/custom-page';
 
-// TODO: Incluir children node a partir de markdown remarker
-// TODO: Melhorar repetição de custom query para custom pages
-// TODO: Create loading component
-// TODO: Treat all errors warnings in console
 // TODO: Bug css on refresh
 // TODO: Add React hot refresh or reload
-const importCustomComponent = componentName =>
-  Loadable(
-    () =>
-      timeout(
-        import(
-          `../components/CustomComponents/${componentName}`
-        ).catch(() => () => (
-          <HeadingSection>
-            {`An error has ocurred! Could not load Custom Component: ${componentName}`}
-          </HeadingSection>
-        )),
-        2000
-      ),
-    {
-      fallback: <div>Loading oh yeas</div>,
-    }
-  );
-
-const CustomComponentProvider = ({ children, data, pageContext }) => {
+// TODO: Block names mostrando o título algo assim... talvez um custom componente modificado,
+// algo para identificar de fato a posição na tela
+// TODO: Custom Components que faltam
+// TODO: Footer como editable component a ser adicionado também
+// TODO: Menu editável
+// TODO: Create pages on demand
+// TODO: Blog post editor
+// TODO: Create blog pages on demand too
+// TODO: Put emoji parser in every text present
+const CustomComponentProvider = ({ children, pageContext }) => {
   const [state, dispatch] = useReducer(
     customPageReducer,
     initialCustomPageState
@@ -41,14 +27,10 @@ const CustomComponentProvider = ({ children, data, pageContext }) => {
 
   useEffect(() => {
     dispatch({
-      type: 'SET_PAGE_DATA',
-      data,
-    });
-    dispatch({
       type: 'SET_PAGE_CONTEXT',
       pageContext,
     });
-  }, [data, pageContext]);
+  }, [pageContext]);
 
   return (
     <CustomPageContext.Provider value={[state, dispatch]}>
@@ -59,47 +41,20 @@ const CustomComponentProvider = ({ children, data, pageContext }) => {
 
 CustomComponentProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  data: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
 };
 
-const useCustomPage = ({ data }) => {
-  // Get Custom Components
-  const edgesArray = data?.allMarkdownRemark?.edges ?? [];
-  const sectionDataArray = edgesArray.map(edgeObj => {
-    edgeObj.node = {
-      ...edgeObj.node,
-      ...edgeObj.node.frontmatter,
-    };
-    delete edgeObj.node.frontmatter;
-    return edgeObj.node;
-  });
-  const [customComponents, setCustomComponents] = useState({});
-  const setCustomComponentsObj = useCallback(thePromisedComponents => {
-    const customComponentsObj = {};
-    thePromisedComponents.forEach(promisedComponent => {
-      customComponentsObj[promisedComponent.key] = promisedComponent;
-    });
-    setCustomComponents(customComponentsObj);
-  }, []);
-
-  useEffect(() => {
-    async function loadCustomComponents() {
-      const componentPromises = (sectionDataArray ?? []).map(
-        async sectionData => {
-          const CustomComponent = await importCustomComponent(
-            sectionData.componentName
-          );
-          // eslint-disable-next-line
-          return <CustomComponent {...sectionData} key={sectionData.id} id={sectionData.id} />;
-        }
-      );
-
-      Promise.all(componentPromises).then(setCustomComponentsObj);
-    }
-
-    loadCustomComponents();
-  }, []);
+const useCustomPage = data => {
+  const customComponents = useMemo(
+    () =>
+      (data.sections ?? []).map(sectionData => {
+        const CustomComponent = CustomComponents[sectionData._template];
+        // eslint-disable-next-line
+        return CustomComponent ? <CustomComponent {...sectionData} key={sectionData.id} id={sectionData.id} /> : (<HeadingSection height="auto" text={`An error has ocurred! Could not load Custom Component: ${sectionData._template}`}/>
+        );
+      }),
+    [data?.sections]
+  );
 
   return {
     customComponents,

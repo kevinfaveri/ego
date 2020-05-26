@@ -8,7 +8,6 @@ import { CustomPageContext } from '../../reducers/custom-page';
 
 function Header() {
   const [{ pageContext }] = useContext(CustomPageContext);
-  console.log('pageContext', pageContext);
   const position = useWindowScrollPosition();
   const hasScrolled = position.y > 20;
   return (
@@ -21,7 +20,7 @@ function Header() {
           )) ||
           (location.pathname === '/' && (
             <StyledSiteSection href="/">
-              {pageContext?.headerTitle ?? 'Portfolio'}
+              {pageContext?.name ?? 'Portfolio'}
             </StyledSiteSection>
           ))
         }

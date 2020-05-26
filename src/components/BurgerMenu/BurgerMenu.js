@@ -23,7 +23,6 @@ export const Menu = ({ open, setOpen }) => {
   const {
     menuItemsJson: { sections, sectionIds },
   } = useStaticQuery(rootQuery);
-  console.log('sections', sections);
 
   const goToElement = useCallback((id, { navigate, location }) => {
     const goToFunc = () => {

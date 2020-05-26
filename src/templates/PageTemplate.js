@@ -1,9 +1,15 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import { useLocalJsonForm } from 'gatsby-tinacms-json';
+import shortid from 'shortid';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import useCustomPage from '../hooks/useCustomPage';
+
+// Blocks
+import { ContentSectionBlock } from '../components/CustomComponents/ContentSection';
+import { HeadingSectionBlock } from '../components/CustomComponents/HeadingSection';
 /**
 TODO: LINK PARA PATREON E KOFI
 TODO: i18n PT/EN OPTION</div>
@@ -12,43 +18,74 @@ TODO: TinaCMS testar
  */
 
 export const query = graphql`
-  query PageTemplateQuery($sections: [String]!) {
-    allMarkdownRemark(filter: { frontmatter: { id: { in: $sections } } }) {
-      edges {
-        node {
-          id
-          frontmatter {
-            id
-            title
-            date
-            componentName
-          }
-          html
-        }
+  query PageTemplateQuery($slug: String!) {
+    customPagesJson(routePath: { eq: $slug }) {
+      name
+      routePath
+      sections {
+        title
+        html
+        bgBrightness
+        columnOrder
+        height
+        text
+        _template
       }
+
+      rawJson
+      fileRelativePath
     }
   }
 `;
 
-const PageTemplate = ({ data, pageContext }) => {
-  const customPageData = useCustomPage({ data, pageContext });
+const FormOptions = {
+  id: `page-${shortid.generate()}`,
+  label: `Page Editing`,
+  fields: [
+    {
+      label: 'Page Title',
+      name: 'rawJson.name',
+      description: 'Used into header and into site tab title.',
+      component: 'text',
+    },
+    /* EDIT ROUTE?? MAYBE...NOT HERE... HERE: https://tinacms.org/docs/gatsby/creating-new-files
+    {
+      label: 'Page Route Path',
+      name: 'rawJson.routePath',
+      description: 'The route path used for this page.',
+      component: 'text',
+    },
+    */
+    {
+      label: 'Page Sections',
+      name: 'rawJson.sections',
+      description: 'Edit the page sections with custom blocks.',
+      component: 'blocks',
+      templates: {
+        ContentSection: ContentSectionBlock,
+        HeadingSection: HeadingSectionBlock,
+      },
+    },
+  ],
+};
+
+const PageTemplate = ({ data: { customPagesJson: pageContextData } }) => {
+  const [pageContext] = useLocalJsonForm(pageContextData, FormOptions);
+  const customPageData = useCustomPage(pageContext);
   const CustomPageProvider = customPageData.CustomComponentProvider;
 
   return (
-    <CustomPageProvider data={data} pageContext={pageContext}>
+    <CustomPageProvider pageContext={pageContext}>
       <Layout>
         <SEO title={pageContext.name} />
-        {pageContext.sections.map(
-          section => customPageData.customComponents[section]
-        )}
+        {customPageData.customComponents}
       </Layout>
     </CustomPageProvider>
   );
 };
 
 PageTemplate.propTypes = {
-  data: PropTypes.object.isRequired,
-  pageContext: PropTypes.shape(() => ({
+  data: PropTypes.shape(() => ({
     name: PropTypes.string.isRequired,
     routePath: PropTypes.string.isRequired,
     sections: PropTypes.array,

@@ -8,17 +8,38 @@ import {
   StyledFlex,
 } from '../../Layout/global-styles';
 
-function HeadingSection({ id, children, height }) {
+export const HeadingSectionBlock = {
+  label: 'Heading Section',
+  key: shortid.generate(),
+  defaultItem: {
+    text: 'A MESSAGE HERE',
+    bgBrightness: 'Lighten',
+    height: 100,
+  },
+  fields: [
+    { name: 'text', label: 'Text', component: 'text' },
+    {
+      name: 'bgBrightness',
+      label: 'Background Color Brightness',
+      component: 'select',
+      options: ['Lighten', 'Darken'],
+    },
+
+    { name: 'height', label: 'Height', component: 'number' },
+  ],
+};
+
+function HeadingSection({ id, bgBrightness, text, height }) {
   return (
     <Hero
-      bgColor="secondary"
+      bgBrightness={bgBrightness}
       id={`heading-section-${id}`}
       key={id}
       height={height}
     >
       <StyledFlex>
         <StyledColumn>
-          <StyledHeader>{children}</StyledHeader>
+          <StyledHeader>{text}</StyledHeader>
         </StyledColumn>
       </StyledFlex>
     </Hero>
@@ -27,13 +48,14 @@ function HeadingSection({ id, children, height }) {
 
 HeadingSection.defaultProps = {
   id: shortid.generate(),
-  height: 'auto',
+  height: 100,
 };
 
 HeadingSection.propTypes = {
   id: PropTypes.string,
-  children: PropTypes.string.isRequired,
-  height: PropTypes.string,
+  bgBrightness: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export default memo(HeadingSection);

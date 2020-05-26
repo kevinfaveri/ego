@@ -1,1 +1,1 @@
-export { default } from './HeadingSection';
+export { default, HeadingSectionBlock } from './HeadingSection';

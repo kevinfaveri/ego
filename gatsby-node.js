@@ -1,6 +1,29 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type CustomPagesJson implements Node {
+      name: String
+      routePath: String
+      rawJson: String
+      fileRelativePath: String
+      sections: [Section]
+    }
+    type Section {
+      _template: String
+      title: String
+      html: String
+      bgBrightness: String
+      columnOrder: String
+      height: String
+      text: String
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (
@@ -24,9 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             name
-            headerTitle
             routePath
-            sections
           }
         }
       }

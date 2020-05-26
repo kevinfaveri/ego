@@ -6,7 +6,7 @@ import { StyledFlex, StyledContent } from '../Layout/global-styles';
 function Footer() {
   return (
     <StyledContainer id="credits">
-      <StyledFlex style={{ margin: 'auto' }}>
+      <StyledFlex style={{ margin: 'auto', marginTop: '80px' }}>
         <StyledContent
           textAlign="center"
           dangerouslySetInnerHTML={{
@@ -15,7 +15,7 @@ function Footer() {
         />
       </StyledFlex>
 
-      <StyledFlex style={{ margin: 'auto' }}>
+      <StyledFlex style={{ margin: 'auto', marginTop: '80px' }}>
         <StyledContent
           textAlign="center"
           dangerouslySetInnerHTML={{
@@ -34,7 +34,7 @@ function Footer() {
         />
       </StyledFlex>
 
-      <StyledFlex style={{ margin: 'auto' }}>
+      <StyledFlex style={{ margin: 'auto', marginTop: '80px' }}>
         <StyledContent
           textAlign="center"
           dangerouslySetInnerHTML={{
