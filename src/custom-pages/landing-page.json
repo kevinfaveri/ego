@@ -5,11 +5,14 @@
     {
       "title": "Title here.",
       "bgBrightness": "Lighten",
-      "phrase1": "",
-      "phrase2": "",
-      "phrase3": "",
-      "avatarPhoto": "../../../images/user/undefined",
-      "_template": "AboutMeSection"
+      "avatarPhoto": "../images/user/kevin-faveri.png",
+      "_template": "AboutMeSection",
+      "phrases": [
+        {
+          "text": "Ingenious Software Engineer 👨‍💻",
+          "_template": "PhrasesBlock"
+        }
+      ]
     }
   ]
 }
