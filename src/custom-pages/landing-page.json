@@ -23,6 +23,13 @@
       ],
       "socialLinks": [
         {
+          "icon": "FaEnvelope",
+          "title": "kevinfaveridev@gmail.com",
+          "href": "mailto:kevinfaveridev@gmail.com",
+          "isDownload": false,
+          "_template": "SocialLinksBlock"
+        },
+        {
           "icon": "FaLinkedin",
           "title": "LinkedIn Profiile",
           "href": "https://www.linkedin.com/in/kevin-de-faveri-aguiar-786972142/",
