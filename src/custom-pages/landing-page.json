@@ -23,6 +23,13 @@
       ],
       "socialLinks": [
         {
+          "icon": "FaLinkedin",
+          "title": "LinkedIn Profiile",
+          "href": "https://www.linkedin.com/in/kevin-de-faveri-aguiar-786972142/",
+          "isDownload": false,
+          "_template": "SocialLinksBlock"
+        },
+        {
           "icon": "FaGithub",
           "title": "Test link",
           "href": "https://github.com/kevinfaguiar",
