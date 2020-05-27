@@ -3,33 +3,13 @@
   "routePath": "/",
   "sections": [
     {
-      "title": "Hi, I’m Kevin",
-      "bgBrightness": "Darken",
-      "phrase1": "DSADSADSAD",
-      "phrase2": "DSADSADSADSADSAD",
-      "phrase3": "DSADSADASDSADAS",
-      "columnOrder": "Title First",
+      "title": "Title here.",
+      "bgBrightness": "Lighten",
+      "phrase1": "",
+      "phrase2": "",
+      "phrase3": "",
+      "avatarPhoto": "../../../images/user/",
       "_template": "AboutMeSection"
-    },
-    {
-      "text": "A MESSAGE HERE",
-      "bgBrightness": "Lighten",
-      "height": 100,
-      "_template": "HeadingSection"
-    },
-    {
-      "title": "About Me",
-      "html": "<p><br>I'm a software engineer with 5+ years of experience and a bachelor's degree in Computer Science. I'm also an open-source collaborator, either through my own or other people's projects.</p><p>I'm that kind of person that gets bored easily, so I'm constantly studying new approaches, technologies, and paradigms to turn the tables... The dynamics of programming is what drives me!</p><p>Oh, of course... Ghost is my son,&nbsp;<a href=\"https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDY0MjA2MDEwMDQ4MjAz?igshid=ufxqukxq49ix&amp;story_media_id=2041017251129548042_310986014\" title=\"Ghost Instagram Highlight\">a beautiful Akita</a>.</p>",
-      "_template": "ContentSection",
-      "bgBrightness": "Darken",
-      "columnOrder": "Title First"
-    },
-    {
-      "title": "Techstack",
-      "html": "<p>I'm currently developing back-end services with NodeJS (mainly Express), front-end apps with Vue/React and mobile apps with React Native. Also, I've got a lot of experience with Java, and more specifically, Spring Boot framework.</p><p>It's worth mentioning that because of some work done in DevOps space I've got a very good understanding of CI/CD tools, Docker and Kubernetes.</p><p>If you want to see more of my techstack, please,&nbsp;<a href=\"https://www.stackshare.io/kevinfaguiar/kevin-techstack\" title=\"Kevin Techstack\">click here</a>.</p>",
-      "bgBrightness": "Lighten",
-      "columnOrder": "Content First",
-      "_template": "ContentSection"
     }
   ]
 }
