@@ -28,6 +28,13 @@
       "bgBrightness": "Darken",
       "columnOrder": "Title First",
       "_template": "ContentSection"
+    },
+    {
+      "title": "Techstack",
+      "html": "<p>I'm currently developing back-end services with NodeJS (mainly Express), front-end apps with Vue/React and mobile apps with React Native. Also, I've got a lot of experience with Java, and more specifically, Spring Boot framework.</p><p>It's worth mentioning that because of some work done in DevOps space I've got a very good understanding of CI/CD tools, Docker and Kubernetes.</p><p>If you want to see more of my techstack, please,&nbsp;<a href=\"https://www.stackshare.io/kevinfaguiar/kevin-techstack\" title=\"Kevin Techstack\">click here</a>.</p>",
+      "bgBrightness": "Lighten",
+      "columnOrder": "Content First",
+      "_template": "ContentSection"
     }
   ]
 }
