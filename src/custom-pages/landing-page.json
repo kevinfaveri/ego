@@ -23,9 +23,9 @@
       ],
       "socialLinks": [
         {
-          "icon": "FaTwitter",
-          "title": "Twitter Profile",
-          "href": "https://twitter.com/kevinfaguiar",
+          "icon": "FaGithub",
+          "title": "Github Profile",
+          "href": "https://github.com/kevinfaguiar",
           "isDownload": false,
           "_template": "SocialLinksBlock"
         },
@@ -44,9 +44,9 @@
           "_template": "SocialLinksBlock"
         },
         {
-          "icon": "FaGithub",
-          "title": "Github Profile",
-          "href": "https://github.com/kevinfaguiar",
+          "icon": "FaTwitter",
+          "title": "Twitter Profile",
+          "href": "https://twitter.com/kevinfaguiar",
           "isDownload": false,
           "_template": "SocialLinksBlock"
         }
