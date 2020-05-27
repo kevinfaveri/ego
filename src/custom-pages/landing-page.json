@@ -9,6 +9,10 @@
       "_template": "AboutMeSection",
       "phrases": [
         {
+          "text": "Proud Dad of Ghost 🐶",
+          "_template": "PhrasesBlock"
+        },
+        {
           "text": "Enthusiastic Open Sourcerer 🧙",
           "_template": "PhrasesBlock"
         },
