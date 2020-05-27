@@ -10,6 +10,7 @@ import useCustomPage from '../hooks/useCustomPage';
 // Blocks
 import { ContentSectionBlock } from '../components/CustomComponents/ContentSection';
 import { HeadingSectionBlock } from '../components/CustomComponents/HeadingSection';
+import { AboutMeSectionBlock } from '../components/CustomComponents/AboutMeSection';
 /**
 TODO: LINK PARA PATREON E KOFI
 TODO: i18n PT/EN OPTION</div>
@@ -29,6 +30,25 @@ export const query = graphql`
         columnOrder
         height
         text
+        phrases {
+          text
+        }
+        socialLinks {
+          icon
+          title
+          href
+          isDownload
+        }
+        avatarPhoto {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+            fixed(width: 300, quality: 100, cropFocus: CENTER) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         _template
       }
 
@@ -64,6 +84,7 @@ const FormOptions = {
       templates: {
         ContentSection: ContentSectionBlock,
         HeadingSection: HeadingSectionBlock,
+        AboutMeSection: AboutMeSectionBlock,
       },
     },
   ],

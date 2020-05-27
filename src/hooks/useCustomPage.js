@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 import CustomComponents from '../components/CustomComponents';
 import HeadingSection from '../components/CustomComponents/HeadingSection';
 import {
@@ -49,9 +50,10 @@ const useCustomPage = data => {
   const customComponents = useMemo(
     () =>
       (data.sections ?? []).map(sectionData => {
+        console.log(sectionData);
         const CustomComponent = CustomComponents[sectionData._template];
         // eslint-disable-next-line
-        return CustomComponent ? <CustomComponent {...sectionData} key={sectionData.id} id={sectionData.id} /> : (<HeadingSection height="auto" text={`An error has ocurred! Could not load Custom Component: ${sectionData._template}`}/>
+        return CustomComponent ? <CustomComponent {...sectionData} key={shortid.generate()} id={`custom-component-${shortid.generate()}`} /> : (<HeadingSection height="auto" text={`An error has ocurred! Could not load Custom Component: ${sectionData._template}`}/>
         );
       }),
     [data?.sections]

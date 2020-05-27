@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { theme, prop } from 'styled-tools';
 
 export const StyledMessage = styled.div`
+  margin-top: 1.5rem;
   font-size: 2rem;
   @media (max-width: 1024px) {
     font-size: 1.2rem;

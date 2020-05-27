@@ -56,7 +56,7 @@ function ContentSection({ id, html, title, bgBrightness, columnOrder }) {
   );
 
   return (
-    <Hero bgBrightness={bgBrightness} id={`about-me-${id}`} key={id}>
+    <Hero bgBrightness={bgBrightness} id={`content-section-${id}`} key={id}>
       <StyledFlex>
         <StyledColumn>{getColumn(1)}</StyledColumn>
         <StyledColumn>{getColumn(2)}</StyledColumn>

@@ -19,6 +19,18 @@ exports.createSchemaCustomization = ({ actions }) => {
       columnOrder: String
       height: String
       text: String
+      phrases: [Phrase]
+      socialLinks: [SocialLink]
+      avatarPhoto: File @fileByRelativePath
+    }
+    type Phrase {
+      text: String
+    }
+    type SocialLink {
+      icon: String
+      title: String
+      href: String
+      isDownload: Boolean
     }
   `;
   createTypes(typeDefs);

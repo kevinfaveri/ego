@@ -23,6 +23,13 @@
       ],
       "socialLinks": [
         {
+          "icon": "FaTwitter",
+          "title": "Twitter Profile",
+          "href": "https://twitter.com/kevinfaguiar",
+          "isDownload": false,
+          "_template": "SocialLinksBlock"
+        },
+        {
           "icon": "FaEnvelope",
           "title": "kevinfaveridev@gmail.com",
           "href": "mailto:kevinfaveridev@gmail.com",
