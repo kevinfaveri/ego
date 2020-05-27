@@ -38,7 +38,7 @@
         },
         {
           "icon": "FaGithub",
-          "title": "Test link",
+          "title": "Github Profile",
           "href": "https://github.com/kevinfaguiar",
           "isDownload": false,
           "_template": "SocialLinksBlock"
