@@ -20,6 +20,15 @@
           "text": "Proud Dad of Ghost 🐶",
           "_template": "PhrasesBlock"
         }
+      ],
+      "socialLinks": [
+        {
+          "icon": "FaGithub",
+          "title": "Test link",
+          "href": "https://github.com/kevinfaguiar",
+          "isDownload": false,
+          "_template": "SocialLinksBlock"
+        }
       ]
     },
     {
