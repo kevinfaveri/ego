@@ -3,6 +3,15 @@
   "routePath": "/",
   "sections": [
     {
+      "title": "Hi, I’m Kevin",
+      "bgBrightness": "Darken",
+      "phrase1": "DSADSADSAD",
+      "phrase2": "DSADSADSADSADSAD",
+      "phrase3": "DSADSADASDSADAS",
+      "columnOrder": "Title First",
+      "_template": "AboutMeSection"
+    },
+    {
       "text": "A MESSAGE HERE",
       "bgBrightness": "Lighten",
       "height": 100,
