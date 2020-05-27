@@ -12,7 +12,6 @@ const FaIcons = {
 };
 
 function SocialLinks({ socialLinks }) {
-  console.log('FaIcons', FaIcons.FaGithub);
   const socialLinksParsed = useMemo(
     () =>
       (socialLinks ?? []).map(socialLink => {

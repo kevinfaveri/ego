@@ -76,22 +76,15 @@ export const AboutMeSectionBlock = {
       label: 'Photo',
       component: 'image',
       previewSrc: (formValues, { input }) => {
-        console.log('formValues', formValues);
-        console.log('input', input);
         const path = input.name.replace('rawJson', 'jsonNode');
         const gatsbyImageNode = get(formValues, path);
         if (!gatsbyImageNode?.childImageSharp?.fluid) return '';
-        console.log('FLUID IMAGE ->', gatsbyImageNode.childImageSharp.fluid);
         return gatsbyImageNode.childImageSharp.fluid.src;
       },
 
-      uploadDir: () => {
-        console.log('uplaoding');
-        return './src/images/user';
-      },
+      uploadDir: () => './src/images/user',
 
       parse: filename => {
-        console.log('Filename', filename);
         if (!filename) return null;
         return `../images/user/${filename}`;
       },

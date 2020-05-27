@@ -50,7 +50,6 @@ const useCustomPage = data => {
   const customComponents = useMemo(
     () =>
       (data.sections ?? []).map(sectionData => {
-        console.log(sectionData);
         const CustomComponent = CustomComponents[sectionData._template];
         // eslint-disable-next-line
         return CustomComponent ? <CustomComponent {...sectionData} key={shortid.generate()} id={`custom-component-${shortid.generate()}`} /> : (<HeadingSection height="auto" text={`An error has ocurred! Could not load Custom Component: ${sectionData._template}`}/>
