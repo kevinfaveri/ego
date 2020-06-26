@@ -65,6 +65,20 @@
       "bgBrightness": "Lighten",
       "columnOrder": "Content First",
       "_template": "ContentSection"
+    },
+    {
+      "title": "Work Experiences",
+      "bgBrightness": "Darken",
+      "experiences": [
+        {
+          "html": "Content here.",
+          "image": null,
+          "referenceUrl": "https://mobiliza.com.br/",
+          "workPeriod": "2019-2020",
+          "_template": "ExperiencesBlock"
+        }
+      ],
+      "_template": "WorkSection"
     }
   ]
 }
