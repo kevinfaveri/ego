@@ -76,6 +76,13 @@
           "referenceUrl": "https://mobiliza.com.br/",
           "workPeriod": "2019-2020",
           "_template": "ExperiencesBlock"
+        },
+        {
+          "html": "<p>Responsible for developing solutions for the most diverse needs of the company, mainly written in Java and VueJS. Had the DevOps assignment of implementing a CI infra in the company's servers using open source stack.</p>",
+          "image": "../images/work/credija.png",
+          "referenceUrl": "https://vimeo.com/148751763",
+          "workPeriod": "2015-2019",
+          "_template": "ExperiencesBlock"
         }
       ],
       "_template": "WorkSection"
