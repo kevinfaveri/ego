@@ -2,51 +2,21 @@ import React, { memo } from 'react';
 import Twemoji from 'twemoji';
 import StyledContainer from './styles';
 import { StyledFlex, StyledContent } from '../Layout/global-styles';
+import { usePageContext } from '../../reducers/custom-page';
 
 function Footer() {
+  const [state] = usePageContext();
+  const {
+    pageContext: { footerMessage = '' },
+  } = state;
+
   return (
     <StyledContainer id="credits">
-      <StyledFlex style={{ margin: 'auto', marginTop: '80px' }}>
+      <StyledFlex style={{ margin: '40px auto' }}>
         <StyledContent
           textAlign="center"
           dangerouslySetInnerHTML={{
-            __html: Twemoji.parse('Made with ❤️ by Kevin.'),
-          }}
-        />
-      </StyledFlex>
-
-      <StyledFlex style={{ margin: 'auto', marginTop: '80px' }}>
-        <StyledContent
-          textAlign="center"
-          dangerouslySetInnerHTML={{
-            __html: `
-            Built with
-            <a
-              class="hover-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.gatsbyjs.org"
-            >
-              Gatsby
-            </a>.
-            `,
-          }}
-        />
-      </StyledFlex>
-
-      <StyledFlex style={{ margin: 'auto', marginTop: '80px' }}>
-        <StyledContent
-          textAlign="center"
-          dangerouslySetInnerHTML={{
-            __html: `
-            Source code is available <a
-              class="hover-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/kevinfaguiar/ego"
-            >
-              here
-            </a>.`,
+            __html: Twemoji.parse(footerMessage ?? ''),
           }}
         />
       </StyledFlex>

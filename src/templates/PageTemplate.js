@@ -24,6 +24,7 @@ export const query = graphql`
   query PageTemplateQuery($slug: String!) {
     customPagesJson(routePath: { eq: $slug }) {
       name
+      footerMessage
       routePath
       sections {
         title
@@ -120,6 +121,11 @@ const FormOptions = {
         WorkSection: WorkSectionBlock,
         ProjectSection: ProjectSectionBlock,
       },
+    },
+    {
+      label: 'Footer Message',
+      name: 'rawJson.footerMessage',
+      component: 'text',
     },
   ],
 };

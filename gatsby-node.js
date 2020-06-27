@@ -10,6 +10,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       rawJson: String
       fileRelativePath: String
       sections: [Section]
+      footerMessage: String
     }
     type Section {
       _template: String

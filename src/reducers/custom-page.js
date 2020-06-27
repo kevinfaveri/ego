@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 
 export const initialCustomPageState = {
   pageContext: null,
@@ -18,3 +18,5 @@ export const customPageReducer = (state, action) => {
 };
 
 export const CustomPageContext = createContext(initialCustomPageState);
+
+export const usePageContext = () => useContext(CustomPageContext);
