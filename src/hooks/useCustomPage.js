@@ -9,8 +9,6 @@ import {
   CustomPageContext,
 } from '../reducers/custom-page';
 
-// TODO: Bug css on refresh
-// TODO: Add React hot refresh or reload
 // TODO: Block names mostrando o título algo assim... talvez um custom componente modificado,
 // algo para identificar de fato a posição na tela
 // TODO: Custom Components que faltam

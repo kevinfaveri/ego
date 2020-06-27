@@ -19,7 +19,7 @@ export const WorkSectionBlock = {
   label: 'Work Section',
   key: shortid.generate(),
   defaultItem: {
-    title: 'Title here.',
+    title: 'Work',
     bgBrightness: 'Lighten',
     experiences: [],
   },
@@ -36,7 +36,7 @@ export const WorkSectionBlock = {
       name: 'experiences',
       component: 'blocks',
       templates: {
-        ExperiencesBlock: {
+        ExperienceBlock: {
           label: 'Experience',
           key: shortid.generate(),
           defaultItem: {
@@ -75,7 +75,7 @@ export const WorkSectionBlock = {
   ],
 };
 
-function WorkSection({ id, title, bgBrightness, experiences, formObj }) {
+function WorkSection({ id, title, bgBrightness, experiences }) {
   usePlugins([HtmlFieldPlugin]);
   return (
     <Hero bgBrightness={bgBrightness} id={`work-section-${id}`} key={id}>

@@ -13,6 +13,7 @@ import { ContentSectionBlock } from '../components/CustomComponents/ContentSecti
 import { HeadingSectionBlock } from '../components/CustomComponents/HeadingSection';
 import { AboutMeSectionBlock } from '../components/CustomComponents/AboutMeSection';
 import { WorkSectionBlock } from '../components/CustomComponents/WorkSection';
+import { ProjectSectionBlock } from '../components/CustomComponents/ProjectSection';
 /**
 TODO: LINK PARA PATREON E KOFI
 TODO: i18n PT/EN OPTION</div>
@@ -65,6 +66,21 @@ export const query = graphql`
           referenceUrl
           html
         }
+        projects {
+          title
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+              fixed(width: 250, height: 250, quality: 100, cropFocus: CENTER) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+          projectUrl
+          html
+        }
         _template
       }
 
@@ -102,6 +118,7 @@ const FormOptions = {
         HeadingSection: HeadingSectionBlock,
         AboutMeSection: AboutMeSectionBlock,
         WorkSection: WorkSectionBlock,
+        ProjectSection: ProjectSectionBlock,
       },
     },
   ],
