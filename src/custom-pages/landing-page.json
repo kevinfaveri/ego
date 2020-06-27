@@ -97,6 +97,13 @@
           "projectUrl": "https://github.com/kevinfaguiar/vue-twemoji-picker",
           "html": "<p>A developer friendly, easy integrable, evergreen and performatic emoji picker (with some batteries) using the Twitter emoji arts (Twemojis). Developed with Vue, for Vue.</p>",
           "_template": "ProjectBlock"
+        },
+        {
+          "title": "VVARBOT",
+          "image": "../images/projects/vvarbot.jpeg",
+          "projectUrl": "https://github.com/kevinfaguiar/vvarbot",
+          "html": "<p>Twitter bot which uses the social network streaming API for automated tweets and replies. Developed in NodeJS.</p>",
+          "_template": "ProjectBlock"
         }
       ],
       "_template": "ProjectSection"
