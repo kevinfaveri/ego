@@ -72,7 +72,7 @@
       "experiences": [
         {
           "html": "<p>Responsible for developing back-end and front-end solutions (mainly in NodeJS and React Web/Native). Has DevOps assignments (CI, Docker and Kubernetes).</p>",
-          "image": "../images/work/mobiliza.png",
+          "image": "../images/work/credija.png",
           "referenceUrl": "https://mobiliza.com.br/",
           "workPeriod": "2019-2020",
           "_template": "ExperiencesBlock"
