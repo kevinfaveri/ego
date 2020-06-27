@@ -104,6 +104,13 @@
           "projectUrl": "https://github.com/kevinfaguiar/vvarbot",
           "html": "<p>Twitter bot which uses the social network streaming API for automated tweets and replies. Developed in NodeJS.</p>",
           "_template": "ProjectBlock"
+        },
+        {
+          "title": "Opa",
+          "image": "../images/projects/opa.png",
+          "projectUrl": "https://github.com/credija/opa",
+          "html": "<p>Opa is an open-source XMPP chat client for the Web (SSR) entirely built on top of Vue, NuxtJS and ElementUI.</p>",
+          "_template": "ProjectBlock"
         }
       ],
       "_template": "ProjectSection"
