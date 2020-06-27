@@ -22,6 +22,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       phrases: [Phrase]
       socialLinks: [SocialLink]
       avatarPhoto: File @fileByRelativePath
+      experiences: [Experiences]
     }
     type Phrase {
       text: String
@@ -31,6 +32,12 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       href: String
       isDownload: Boolean
+    }
+    type Experiences {
+      image: File @fileByRelativePath
+      workPeriod: String,
+      referenceUrl: String,
+      html: String
     }
   `;
   createTypes(typeDefs);

@@ -9,7 +9,7 @@ import { StyledDivider } from '../Layout/global-styles';
 const rootQuery = graphql`
   query {
     menuItemsJson(
-      fileRelativePath: { regex: "/(metadata/menu-items.json)/" }
+      fileRelativePath: { regex: "/(menu-items.json)/" }
       id: { eq: "menu-items" }
     ) {
       id

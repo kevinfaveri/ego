@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useLocalJsonForm } from 'gatsby-tinacms-json';
+import { usePlugin } from 'tinacms';
+import { useJsonForm } from 'gatsby-tinacms-json';
 import shortid from 'shortid';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -11,11 +12,11 @@ import useCustomPage from '../hooks/useCustomPage';
 import { ContentSectionBlock } from '../components/CustomComponents/ContentSection';
 import { HeadingSectionBlock } from '../components/CustomComponents/HeadingSection';
 import { AboutMeSectionBlock } from '../components/CustomComponents/AboutMeSection';
+import { WorkSectionBlock } from '../components/CustomComponents/WorkSection';
 /**
 TODO: LINK PARA PATREON E KOFI
 TODO: i18n PT/EN OPTION</div>
 TODO: SearchBlogPosts comum [DIGITA, PESQUISA POR QUERY NA URL ON CLICK ENTER OU CLICK GLASS MAGNIFIER] OU COM DATASET AI FAZ REALTIME...
-TODO: TinaCMS testar
  */
 
 export const query = graphql`
@@ -48,6 +49,21 @@ export const query = graphql`
               ...GatsbyImageSharpFixed
             }
           }
+        }
+        experiences {
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+              fixed(width: 300, quality: 100, cropFocus: CENTER) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+          workPeriod
+          referenceUrl
+          html
         }
         _template
       }
@@ -85,18 +101,21 @@ const FormOptions = {
         ContentSection: ContentSectionBlock,
         HeadingSection: HeadingSectionBlock,
         AboutMeSection: AboutMeSectionBlock,
+        WorkSection: WorkSectionBlock,
       },
     },
   ],
 };
 
 const PageTemplate = ({ data: { customPagesJson: pageContextData } }) => {
-  const [pageContext] = useLocalJsonForm(pageContextData, FormOptions);
-  const customPageData = useCustomPage(pageContext);
+  const [pageContext, formObj] = useJsonForm(pageContextData, FormOptions);
+  usePlugin(formObj);
+
+  const customPageData = useCustomPage(pageContext, formObj);
   const CustomPageProvider = customPageData.CustomComponentProvider;
 
   return (
-    <CustomPageProvider pageContext={pageContext}>
+    <CustomPageProvider pageContext={pageContext} formObj={formObj}>
       <Layout>
         <SEO title={pageContext.name} />
         {customPageData.customComponents}

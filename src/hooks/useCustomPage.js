@@ -20,8 +20,12 @@ import {
 // TODO: Blog post editor
 // TODO: Create blog pages on demand too
 // TODO: Put emoji parser in every text present
+// TODO: New List component with different placeholder
+// TODO: New image custom component TinaCMS (Check if new release fixes)
 // TODO: TinaCMS dark theme accordingly page theme
-const CustomComponentProvider = ({ children, pageContext }) => {
+// TODO: Curriculum Vitae Page Component
+// TODO: FIX Hidden menu button
+const CustomComponentProvider = ({ children, pageContext, formObj }) => {
   const [state, dispatch] = useReducer(
     customPageReducer,
     initialCustomPageState
@@ -34,6 +38,13 @@ const CustomComponentProvider = ({ children, pageContext }) => {
     });
   }, [pageContext]);
 
+  useEffect(() => {
+    dispatch({
+      type: 'SET_FORM_OBJ',
+      formObj,
+    });
+  }, [formObj]);
+
   return (
     <CustomPageContext.Provider value={[state, dispatch]}>
       {children}
@@ -44,15 +55,16 @@ const CustomComponentProvider = ({ children, pageContext }) => {
 CustomComponentProvider.propTypes = {
   children: PropTypes.node.isRequired,
   pageContext: PropTypes.object.isRequired,
+  formObj: PropTypes.object.isRequired,
 };
 
-const useCustomPage = data => {
+const useCustomPage = (data, formObj) => {
   const customComponents = useMemo(
     () =>
       (data.sections ?? []).map(sectionData => {
         const CustomComponent = CustomComponents[sectionData._template];
         // eslint-disable-next-line
-        return CustomComponent ? <CustomComponent {...sectionData} key={shortid.generate()} id={`custom-component-${shortid.generate()}`} /> : (<HeadingSection height="auto" text={`An error has ocurred! Could not load Custom Component: ${sectionData._template}`}/>
+        return CustomComponent ? <CustomComponent {...sectionData} formObj={formObj} key={shortid.generate()} id={`custom-component-${shortid.generate()}`} /> : (<HeadingSection height="auto" text={`An error has ocurred! Could not load Custom Component: ${sectionData._template}`}/>
         );
       }),
     [data?.sections]
