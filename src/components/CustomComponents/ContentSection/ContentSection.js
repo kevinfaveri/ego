@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import Hero from '../../Hero';
@@ -8,6 +8,7 @@ import {
   StyledContent,
   StyledFlex,
 } from '../../Layout/global-styles';
+import useWindowSize from '../../../hooks/useWindowSize';
 
 export const ContentSectionBlock = {
   label: 'Content Section',
@@ -36,9 +37,19 @@ export const ContentSectionBlock = {
   ],
 };
 
-function ContentSection({ id, html, title, bgBrightness, columnOrder }) {
+function ContentSection({
+  id,
+  html,
+  title,
+  bgBrightness,
+  columnOrder: columnOrderString,
+}) {
+  const { width } = useWindowSize();
+  const isMobile = useMemo(() => width <= 576, [width]);
+
   const getColumn = useCallback(
     columnNumber => {
+      const columnOrder = isMobile ? null : columnOrderString;
       switch (columnOrder) {
         case 'Title First':
           if (columnNumber === 1) return <StyledHeader>{title}</StyledHeader>;
@@ -52,7 +63,7 @@ function ContentSection({ id, html, title, bgBrightness, columnOrder }) {
           return <StyledContent dangerouslySetInnerHTML={{ __html: html }} />;
       }
     },
-    [html, title, columnOrder]
+    [html, title, columnOrderString, isMobile]
   );
 
   return (
