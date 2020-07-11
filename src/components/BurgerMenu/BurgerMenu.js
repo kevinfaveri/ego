@@ -61,8 +61,6 @@ export const Menu = ({ open, setOpen }) => {
                 {el}
               </button>
             ))}
-            <StyledDivider />
-            <a href="/blog">Blog</a>
           </>
         )}
       </Location>

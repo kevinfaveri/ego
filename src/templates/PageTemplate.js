@@ -14,11 +14,6 @@ import { HeadingSectionBlock } from '../components/CustomComponents/HeadingSecti
 import { AboutMeSectionBlock } from '../components/CustomComponents/AboutMeSection';
 import { WorkSectionBlock } from '../components/CustomComponents/WorkSection';
 import { ProjectSectionBlock } from '../components/CustomComponents/ProjectSection';
-/**
-TODO: LINK PARA PATREON E KOFI
-TODO: i18n PT/EN OPTION</div>
-TODO: SearchBlogPosts comum [DIGITA, PESQUISA POR QUERY NA URL ON CLICK ENTER OU CLICK GLASS MAGNIFIER] OU COM DATASET AI FAZ REALTIME...
- */
 
 export const query = graphql`
   query PageTemplateQuery($slug: String!) {

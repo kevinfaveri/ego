@@ -21,6 +21,8 @@ import {
 // TODO: TinaCMS dark theme accordingly page theme
 // TODO: Curriculum Vitae Page Component generation on build
 // TODO: FIX Hidden menu button
+// TODO: New Blog
+// TODO: Search in Blog
 const CustomComponentProvider = ({ children, pageContext, formObj }) => {
   const [state, dispatch] = useReducer(
     customPageReducer,
