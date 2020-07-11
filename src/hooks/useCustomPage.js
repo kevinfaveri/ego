@@ -23,6 +23,7 @@ import {
 // TODO: FIX Hidden menu button
 // TODO: New Blog
 // TODO: Search in Blog
+// TODO: Tests (maybe?)
 const CustomComponentProvider = ({ children, pageContext, formObj }) => {
   const [state, dispatch] = useReducer(
     customPageReducer,
