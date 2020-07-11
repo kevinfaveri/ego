@@ -9,11 +9,9 @@ import {
   CustomPageContext,
 } from '../reducers/custom-page';
 
-// TODO: Block names mostrando o título algo assim... talvez um custom componente modificado,
-// algo para identificar de fato a posição na tela
-// TODO: Custom Components que faltam
-// TODO: Footer como editable component a ser adicionado também
-// TODO: Menu editável
+// TODO: Better responsiveness when TinaCMS sidebar is open
+// TODO: Better block component for Tina showing name or preview in listing
+// TODO: Editable Menu
 // TODO: Create pages on demand
 // TODO: Blog post editor
 // TODO: Create blog pages on demand too
@@ -21,7 +19,7 @@ import {
 // TODO: New List component with different placeholder
 // TODO: New image custom component TinaCMS (Check if new release fixes)
 // TODO: TinaCMS dark theme accordingly page theme
-// TODO: Curriculum Vitae Page Component
+// TODO: Curriculum Vitae Page Component generation on build
 // TODO: FIX Hidden menu button
 const CustomComponentProvider = ({ children, pageContext, formObj }) => {
   const [state, dispatch] = useReducer(
