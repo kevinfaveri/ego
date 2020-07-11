@@ -33,7 +33,6 @@ const ThemeContainer = ({ children }) => {
   const [theme, toggleTheme, componentMounted] = useDarkMode();
 
   const isLight = theme === 'light';
-
   if (!componentMounted) {
     return <div />;
   }

@@ -8,9 +8,10 @@ function AnimatedTyping({ steps, loop }) {
   const compRef = useRef(null);
 
   useEffect(() => {
+    compRef.current.innerHTML = '';
     if (loop) type(compRef.current, ...steps, loopType);
     else type(compRef.current, ...steps);
-  }, []);
+  }, [steps]);
 
   return <Container ref={compRef} />;
 }

@@ -1,63 +1,46 @@
-import React, { memo } from 'react';
-import {
+import React, { memo, useMemo } from 'react';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+import shortid from 'shortid';
+import StyledContainer from './styles';
+
+const FaIcons = {
   FaGithub,
   FaLinkedin,
   FaTwitter,
   FaEnvelope,
-  FaFilePdf,
-} from 'react-icons/fa';
-import StyledContainer from './styles';
-import CurriculumFile from '../../curriculum/curriculum.pdf';
+};
 
-function SocialLinks() {
-  return (
-    <StyledContainer>
-      <a
-        href="https://github.com/kevinfaguiar"
-        title="https://github.com/kevinfaguiar"
-        className="hover-img-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaGithub />
-      </a>
-      <a
-        href="mailto:kevinfaveridev@gmail.com"
-        title="kevinfaveridev@gmail.com"
-        className="hover-img-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaEnvelope />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/kevin-de-faveri-aguiar-786972142"
-        title="https://www.linkedin.com/in/kevin-de-faveri-aguiar-786972142"
-        className="hover-img-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaLinkedin />
-      </a>
-      <a
-        href="https://twitter.com/kevinfaguiar"
-        title="https://twitter.com/kevinfaguiar"
-        className="hover-img-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaTwitter />
-      </a>
-      <a
-        className="hover-img-link"
-        href={CurriculumFile}
-        download
-        title="Resume"
-      >
-        <FaFilePdf />
-      </a>
-    </StyledContainer>
+function SocialLinks({ socialLinks }) {
+  const socialLinksParsed = useMemo(
+    () =>
+      (socialLinks ?? []).map(socialLink => {
+        const FaIcon = FaIcons[socialLink.icon];
+        return (
+          <a
+            key={shortid.generate()}
+            href={socialLink.href}
+            title={socialLink.title}
+            className="hover-img-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            download={socialLink.isDownload}
+          >
+            {FaIcon ? <FaIcon /> : <FaGithub />}
+          </a>
+        );
+      }),
+    [socialLinks]
   );
+  return <StyledContainer>{socialLinksParsed}</StyledContainer>;
 }
+
+SocialLinks.defaultProps = {
+  socialLinks: [],
+};
+
+SocialLinks.propTypes = {
+  socialLinks: PropTypes.array,
+};
 
 export default memo(SocialLinks);

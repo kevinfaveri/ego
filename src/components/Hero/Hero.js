@@ -2,12 +2,13 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import StyledContainer from './styles';
 
-function Hero({ id, children, height, bgColor, hasPadding }) {
+function Hero({ id, children, height, bgBrightness, hasPadding }) {
   return (
     <StyledContainer
       id={id}
-      height={height}
-      bgColor={bgColor}
+      // eslint-disable-next-line
+      height={isNaN(height) ? height : `${height}px`}
+      bgColor={bgBrightness === 'Lighten' ? 'secondary' : 'primary'}
       hasPadding={hasPadding}
     >
       {children}
@@ -18,7 +19,7 @@ function Hero({ id, children, height, bgColor, hasPadding }) {
 Hero.defaultProps = {
   id: undefined,
   height: 'auto',
-  bgColor: 'primary',
+  bgBrightness: 'Lighten',
   hasPadding: false,
 };
 
@@ -26,7 +27,7 @@ Hero.propTypes = {
   id: PropTypes.string,
   height: PropTypes.string,
   children: PropTypes.node.isRequired,
-  bgColor: PropTypes.oneOf(['primary', 'secondary']),
+  bgBrightness: PropTypes.oneOf(['Lighten', 'Darken']),
   hasPadding: PropTypes.bool,
 };
 

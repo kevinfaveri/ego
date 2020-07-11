@@ -8,32 +8,21 @@ import { StyledDivider } from '../Layout/global-styles';
 
 const rootQuery = graphql`
   query {
-    allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/(onepage-content)/" }
-        frontmatter: { id: { eq: "menu-items" } }
-      }
+    menuItemsJson(
+      fileRelativePath: { regex: "/(menu-items.json)/" }
+      id: { eq: "menu-items" }
     ) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            sections
-            sectionIds
-          }
-          excerpt
-        }
-      }
+      id
+      sections
+      sectionIds
     }
   }
 `;
 
 export const Menu = ({ open, setOpen }) => {
-  const data = useStaticQuery(rootQuery);
   const {
-    frontmatter: { sections, sectionIds },
-  } = data.allMarkdownRemark.edges[0].node;
+    menuItemsJson: { sections, sectionIds },
+  } = useStaticQuery(rootQuery);
 
   const goToElement = useCallback((id, { navigate, location }) => {
     const goToFunc = () => {
@@ -72,8 +61,6 @@ export const Menu = ({ open, setOpen }) => {
                 {el}
               </button>
             ))}
-            <StyledDivider />
-            <a href="/blog">Blog</a>
           </>
         )}
       </Location>

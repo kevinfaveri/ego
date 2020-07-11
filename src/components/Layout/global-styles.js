@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { theme, withProp } from 'styled-tools';
+import { theme, withProp, prop } from 'styled-tools';
 import { transparentize } from 'polished';
 
 export default createGlobalStyle`
@@ -31,6 +31,20 @@ export default createGlobalStyle`
   main {
     margin: 0;
     padding: 0;
+
+    > :nth-child(1) {
+      margin-top: 80px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    border-radius: 5px;
+    color: ${theme('colors.primary')};
+
+    :hover {
+      color: ${withProp(['theme.colors.primary'], transparentize(0.4))};
+    }
   }
 
   .hover-link {
@@ -124,5 +138,9 @@ export const StyledContent = styled.div`
     font-size: 1rem;
   }
   color: ${theme('colors.textPrimary')};
-  text-align: justify;
+  text-align: ${prop('textAlign', 'justify')};
+
+  > a {
+    margin: 0px 3px;
+  }
 `;
