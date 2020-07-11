@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
 import StyledContainer, {
   StyledPost,
   StyledContent,
@@ -80,40 +79,3 @@ BlogPostList.propTypes = {
 };
 
 export default BlogPostList;
-
-export const query = graphql`
-  query blogPostList($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/(blog-pages)/" } }
-      sort: { order: DESC, fields: [frontmatter___id] }
-      limit: $limit
-      skip: $skip
-    ) {
-      totalCount
-      edges {
-        node {
-          excerpt
-          frontmatter {
-            id
-            title
-            date
-            author
-            authorPhoto {
-              childImageSharp {
-                fixed(width: 100, quality: 100, cropFocus: CENTER) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-          }
-          fields {
-            readingTime {
-              text
-            }
-            slug
-          }
-        }
-      }
-    }
-  }
-`;

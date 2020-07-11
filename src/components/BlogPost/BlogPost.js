@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
 import StyledContainer, { StyledContent } from './styles';
 import Layout from '../Layout';
 import BlogPostHeader from '../BlogPostHeader';
@@ -49,28 +48,3 @@ BlogPost.propTypes = {
 };
 
 export default BlogPost;
-
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        date
-        author
-        authorPhoto {
-          childImageSharp {
-            fixed(width: 100, quality: 100, cropFocus: CENTER) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      }
-      fields {
-        readingTime {
-          text
-        }
-      }
-    }
-  }
-`;

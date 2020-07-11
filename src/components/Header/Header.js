@@ -15,14 +15,11 @@ function Header() {
       <Logo />
       <Location>
         {({ location }) =>
-          (location.pathname.includes('blog') && (
-            <StyledSiteSection href="/blog">Blog</StyledSiteSection>
-          )) ||
-          (location.pathname === '/' && (
+          location.pathname === '/' && (
             <StyledSiteSection href="/">
               {pageContext?.name ?? 'Portfolio'}
             </StyledSiteSection>
-          ))
+          )
         }
       </Location>
 

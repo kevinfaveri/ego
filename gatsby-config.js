@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Kevin Aguiar`,
-    description: `@kevinfaguiar personal site which includes portfolio and blog.`,
+    description: `@kevinfaguiar personal site which includes portfolio.`,
     author: `@kevinfaguiar`,
   },
   plugins: [
@@ -12,11 +12,7 @@ module.exports = {
           hidden: process.env.NODE_ENV === 'production',
           position: 'displace',
         },
-        plugins: [
-          'gatsby-tinacms-git',
-          'gatsby-tinacms-json',
-          // We'll add some Tinacms plugins in the next step.
-        ],
+        plugins: ['gatsby-tinacms-git', 'gatsby-tinacms-json'],
       },
     },
     'gatsby-transformer-json',
@@ -56,27 +52,11 @@ module.exports = {
         path: `${__dirname}/src/custom-pages`,
       },
     },
-    /*
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: 'customPagesContents',
-        path: `${__dirname}/src/custom-pages/custom-pages-contents`,
-      },
-    },
-    */
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'menu-items',
         path: `${__dirname}/src/metadata/menu-items`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: 'blog-pages',
-        path: `${__dirname}/src/blog-pages`,
       },
     },
     `gatsby-transformer-sharp`,

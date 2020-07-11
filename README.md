@@ -1,5 +1,5 @@
 <h1 align="center">
-  Kevin Portfolio and Blog - Ego
+  Kevin Portfolio - Ego
 </h1>
 
 Project made with Gatsby + TinaCMS using .json files as datasource and styled-components for styling.
