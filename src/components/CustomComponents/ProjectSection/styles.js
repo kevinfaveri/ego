@@ -12,9 +12,9 @@ export const StyledProjectColumn = styled(StyledColumn)`
 
 export const StyledProjectTitle = styled.h3`
   margin: 30px;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   @media (max-width: 1024px) {
-    font-size: 1.5rem;
+    font-size: 0.7rem;
   }
   color: ${theme('colors.textPrimary')};
   text-align: center;

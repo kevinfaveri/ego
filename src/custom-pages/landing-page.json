@@ -25,28 +25,28 @@
         {
           "icon": "FaGithub",
           "title": "Github Profile",
-          "href": "https://github.com/kevinfaguiar",
+          "href": "https://github.com/kevinfaveri",
           "isDownload": false,
           "_template": "SocialLinksBlock"
         },
         {
           "icon": "FaEnvelope",
-          "title": "kevinfaveridev@gmail.com",
-          "href": "mailto:kevinfaveridev@gmail.com",
+          "title": "kevin@faveri.dev",
+          "href": "mailto:kevin@faveri.dev",
           "isDownload": false,
           "_template": "SocialLinksBlock"
         },
         {
           "icon": "FaLinkedin",
           "title": "LinkedIn Profiile",
-          "href": "https://www.linkedin.com/in/kevin-de-faveri-aguiar-786972142/",
+          "href": "https://www.linkedin.com/in/kevinfaveri",
           "isDownload": false,
           "_template": "SocialLinksBlock"
         },
         {
           "icon": "FaTwitter",
           "title": "Twitter Profile",
-          "href": "https://twitter.com/kevinfaguiar",
+          "href": "https://twitter.com/kevinfaveri_",
           "isDownload": false,
           "_template": "SocialLinksBlock"
         }
@@ -61,7 +61,7 @@
     },
     {
       "title": "Techstack",
-      "html": "<p>I'm currently developing back-end services with NodeJS (mainly Express), front-end apps with Vue/React and mobile apps with React Native. Also, I've got a lot of experience with Java, and more specifically, Spring Boot framework.</p><p>It's worth mentioning that because of some work done in DevOps space I've got a very good understanding of CI/CD tools, Docker and Kubernetes.</p><p>If you want to see more of my techstack, please,&nbsp;<a href=\"https://www.stackshare.io/kevinfaguiar/kevin-techstack\" title=\"Kevin Techstack\">click here</a>.</p>",
+      "html": "<p>I'm currently developing back-end services with NodeJS (mainly Express), front-end apps with Vue/React and mobile apps with React Native. I've got a lot of experience with Java, and more specifically, Spring Boot framework. Now I'm focused on dominating web3 technologies, which I believe will play a huge role in the near future.</p><p>It's worth mentioning that because of some work done in DevOps space I've got a very good understanding of CI/CD tools, Docker and Kubernetes.</p><p>If you want to see more of my techstack, please,&nbsp;<a href=\"https://www.stackshare.io/kevinfaveri/kevin-techstack\" title=\"Kevin Techstack\">click here</a>.</p>",
       "bgBrightness": "Lighten",
       "columnOrder": "Content First",
       "_template": "ContentSection"
@@ -106,17 +106,17 @@
       "bgBrightness": "Lighten",
       "projects": [
         {
-          "title": "Vue Twemoji Picker",
-          "image": "../images/projects/twemoji-picker.png",
-          "projectUrl": "https://github.com/kevinfaguiar/vue-twemoji-picker",
-          "html": "<p>A developer friendly, easy integrable, evergreen and performatic emoji picker (with some batteries) using the Twitter emoji arts (Twemojis). Developed with Vue, for Vue.</p>",
+          "title": "SNESPunks",
+          "image": "../images/projects/snes-punks.png",
+          "projectUrl": "https://github.com/kevinfaveri/snes-punks",
+          "html": "<p>This is an example fullstack ethereum app using NextJS + Tailwind + nes.css as front/back techstack. It is multi wallet (browser injected and wallet connect); The contract has been written and deployed using HardHat and the ERC712 contract.</p>",
           "_template": "ProjectBlock"
         },
         {
-          "title": "VVARBOT",
-          "image": "../images/projects/vvarbot.jpeg",
-          "projectUrl": "https://github.com/kevinfaguiar/vvarbot",
-          "html": "<p>Twitter bot which uses the social network streaming API for automated tweets and replies. Developed in NodeJS.</p>",
+          "title": "Twemoji Picker",
+          "image": "../images/projects/twemoji-picker.png",
+          "projectUrl": "https://github.com/kevinfaveri/vue-twemoji-picker",
+          "html": "<p>A developer friendly, easy integrable, evergreen and performatic emoji picker (with some batteries) using the Twitter emoji arts (Twemojis). Developed with Vue, for Vue.</p>",
           "_template": "ProjectBlock"
         },
         {
